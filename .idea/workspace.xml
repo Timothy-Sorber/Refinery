@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="basic 3x+1 thingy to test my basic knowledge of java">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="re-commit because some files dont want to commit automaticly">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2L13hQfolN93HQOC8YUJ5dLONRu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,7 +66,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675043114605</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added a window to show what the script is doing">
+      <created>1675044499896</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675044499896</updated>
+    </task>
+    <task id="LOCAL-00004" summary="re-commit because some files dont want to commit automaticly">
+      <created>1675044595234</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675044595234</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +97,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hello world!" />
     <MESSAGE value="basic 3x+1 thingy to test my basic knowledge of java" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic 3x+1 thingy to test my basic knowledge of java" />
+    <MESSAGE value="added a window to show what the script is doing" />
+    <MESSAGE value="re-commit because some files dont want to commit automaticly" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-commit because some files dont want to commit automaticly" />
   </component>
 </project>
