@@ -1,4 +1,4 @@
-package org.refinery;
+package org.refinery.Util;
 
 public class util {
     public static void wait(int ms)
