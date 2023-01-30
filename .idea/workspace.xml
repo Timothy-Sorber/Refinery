@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="re-commit because some files dont want to commit automaticly">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" afterDir="false" />
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Removed the 3x+1 thing and made a basic gameloop for the future">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameObject/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameObject/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameObject/Size.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675044595234</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="re-commit because some files dont want to commit automaticly">
+      <created>1675111056232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675111056232</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,7 +108,7 @@
     <MESSAGE value="hello world!" />
     <MESSAGE value="basic 3x+1 thingy to test my basic knowledge of java" />
     <MESSAGE value="added a window to show what the script is doing" />
-    <MESSAGE value="re-commit because some files dont want to commit automaticly" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-commit because some files dont want to commit automaticly" />
+    <MESSAGE value="Removed the 3x+1 thing and made a basic gameloop for the future" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the 3x+1 thing and made a basic gameloop for the future" />
   </component>
 </project>

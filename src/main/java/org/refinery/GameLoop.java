@@ -5,6 +5,12 @@ public class GameLoop implements Runnable {
     private final double updateRate = 1.0d/60.0d;
     private long nextStatTime;
     private int fps, ups;
+
+    private Game game;
+
+    public GameLoop(Game game){
+        this.game = game;
+    }
     @Override
     public void run() {
         running = true;
@@ -17,11 +23,13 @@ public class GameLoop implements Runnable {
             accumulator += lastRenderTime;
             lastUpdate = currentTime;
 
-            while (accumulator > updateRate) {
-                update();
-                accumulator -= updateRate;
+            if (accumulator >= updateRate) {
+                while (accumulator >= updateRate) {
+                    update();
+                    accumulator -= updateRate;
+                }
+                render();
             }
-            render();
             updateStats();
         }
     }
@@ -36,10 +44,12 @@ public class GameLoop implements Runnable {
     }
 
     private void render() {
+        game.render();
         fps++;
     }
 
     private void update() {
+        game.update();
         ups++;
     }
 }
