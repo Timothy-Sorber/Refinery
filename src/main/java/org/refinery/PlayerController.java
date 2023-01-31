@@ -1,23 +1,32 @@
 package org.refinery;
 
+import java.awt.event.KeyEvent;
+
 public class PlayerController implements Controller{
+
+    private Input input;
+
+    public PlayerController(Input input){
+        this.input = input;
+    }
+
     @Override
     public Boolean iru() {
-        return null;
+        return input.ispressed(KeyEvent.VK_UP);
     }
 
     @Override
     public Boolean ird() {
-        return null;
+        return input.ispressed(KeyEvent.VK_DOWN);
     }
 
     @Override
     public Boolean irl() {
-        return null;
+        return input.ispressed(KeyEvent.VK_LEFT);
     }
 
     @Override
     public Boolean irr() {
-        return null;
+        return input.ispressed(KeyEvent.VK_RIGHT);
     }
 }

@@ -1,11 +1,12 @@
 package org.refinery;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
 public class Window extends JFrame {
     private Canvas c;
-    public Window(int width, int height){
+    public Window(int width, int height, Input input){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -13,6 +14,7 @@ public class Window extends JFrame {
         c = new Canvas();
         c.setPreferredSize(new Dimension(width, height));
         add(c);
+        addKeyListener(input);
         pack();
 
         c.createBufferStrategy(3);
