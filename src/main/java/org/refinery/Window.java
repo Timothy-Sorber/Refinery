@@ -25,9 +25,12 @@ public class Window extends JFrame {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,c.getWidth(),c.getHeight());
 
-        Rectangle rect = game.getRect();
-        g.setColor(Color.BLUE);
-        g.fillRect(rect.x,rect.y,rect.width,rect.height);
+        game.getGameObjects().forEach(GameObject -> g.drawImage(
+                GameObject.getSprite(),
+                GameObject.getPosition().getX(),
+                GameObject.getPosition().getY(),
+                null
+        ));
 
         g.dispose();
         bufferStrategy.show();

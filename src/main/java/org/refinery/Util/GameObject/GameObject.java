@@ -1,39 +1,24 @@
 package org.refinery.Util.GameObject;
-import org.refinery.Util.GameObject.Position;
-import org.refinery.Util.GameObject.Size;
 
-public class GameObject {
-    private Position p;
-    private Size s;
-    private Boolean visible;
+import java.awt.*;
 
-    public GameObject(Position pos, Size size){
-        this.p = pos;
-        this.s = size;
-        this.visible = false;
+public abstract class GameObject {
+    protected Position p;
+    protected Size s;
+
+    public GameObject() {
+        p = new Position(50, 50);
+        s = new Size(100, 100);
     }
 
-    public Boolean getVisible() {
-        return visible;
-    }
+    public abstract void update();
+    public abstract Image getSprite();
 
-    public void setVisible(Boolean visible) {
-        this.visible = visible;
-    }
-
-    public Position getP() {
+    public Position getPosition() {
         return p;
     }
 
-    public void setP(Position p) {
-        this.p = p;
-    }
-
-    public Size getS() {
+    public Size getSize() {
         return s;
-    }
-
-    public void setS(Size s) {
-        this.s = s;
     }
 }

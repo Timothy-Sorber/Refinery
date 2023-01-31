@@ -1,25 +1,35 @@
 package org.refinery;
 
-import java.awt.Rectangle;
+import org.refinery.Objects.Player;
+import org.refinery.Util.GameObject.GameObject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.*;
 
 public class Game {
     private Window w;
-    private Rectangle rect;
+    private List<GameObject> GameObjects;
 
     public Game(int width, int height){
         w = new Window(width, height);
-        rect = new Rectangle(0,0,100,100);
+        GameObjects = new ArrayList<>();
+        GameObjects.add(new Player());
     }
 
     public void update(){
-        rect.setLocation(rect.x + 10, rect.y);
+        GameObjects.forEach(GameObject -> GameObject.update());
     }
 
     public void render(){
         w.render(this);
     }
 
-    public Rectangle getRect() {
-        return rect;
+    public Window getW() {
+        return w;
+    }
+
+    public List<GameObject> getGameObjects() {
+        return GameObjects;
     }
 }
