@@ -1,11 +1,11 @@
-package org.refinery;
+package org.refinery.game;
 
 import org.refinery.Objects.Player;
 import org.refinery.Util.GameObject.GameObject;
+import org.refinery.Util.Input;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.*;
 
 public class Game {
     private Window w;

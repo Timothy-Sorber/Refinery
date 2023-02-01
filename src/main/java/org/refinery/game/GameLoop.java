@@ -1,6 +1,5 @@
-package org.refinery;
+package org.refinery.game;
 
-import java.awt.Color;
 public class GameLoop implements Runnable {
     private boolean running;
     private final double updateRate = 1.0d/60.0d;

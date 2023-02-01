@@ -1,7 +1,9 @@
-package org.refinery;
+package org.refinery.game;
+import org.refinery.Util.Input;
+import org.refinery.game.Game;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
 public class Window extends JFrame {

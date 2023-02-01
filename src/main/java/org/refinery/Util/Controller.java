@@ -1,4 +1,4 @@
-package org.refinery;
+package org.refinery.Util;
 
 public interface Controller {
     Boolean iru();

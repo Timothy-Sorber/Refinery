@@ -1,8 +1,11 @@
 package org.refinery;
 
+import org.refinery.Util.Controller;
+import org.refinery.Util.Input;
+
 import java.awt.event.KeyEvent;
 
-public class PlayerController implements Controller{
+public class PlayerController implements Controller {
 
     private Input input;
 

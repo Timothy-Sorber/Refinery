@@ -1,4 +1,4 @@
-package org.refinery;
+package org.refinery.Util;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
