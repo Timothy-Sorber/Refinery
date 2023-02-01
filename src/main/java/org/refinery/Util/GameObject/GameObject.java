@@ -1,5 +1,8 @@
 package org.refinery.Util.GameObject;
 
+import org.refinery.Util.Position;
+import org.refinery.Util.Size;
+
 import java.awt.*;
 
 public abstract class GameObject {
@@ -20,5 +23,9 @@ public abstract class GameObject {
 
     public Size getSize() {
         return s;
+    }
+
+    public void setPosition(Position p) {
+        this.p = p;
     }
 }

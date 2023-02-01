@@ -1,4 +1,4 @@
-package org.refinery.Util.GameObject;
+package org.refinery.Util;
 
 public class Size {
     private int width, height;

@@ -1,41 +1,27 @@
 package org.refinery.Objects;
 
-import org.refinery.Controller;
 import org.refinery.Input;
-import org.refinery.PlayerController;
 import org.refinery.Util.GameObject.GameObject;
-import org.refinery.Util.GameObject.Position;
+import org.refinery.Util.Position;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
-
-    private Controller controller;
     private Position position;
+    public Input input;
 
-    public Player(Controller controller){
+    public Player(Input input){
         super();
-        this.controller = controller;
+        this.input = input;
+        this.position = getPosition();
     }
     @Override
     public void update() {
         int deltaX = 0;
         int deltaY = 0;
-
-        if (controller.iru()){
-            deltaY--;
-        }
-        if (controller.ird()){
-            deltaY++;
-        }
-        if (controller.irl()){
-            deltaX--;
-        }
-        if (controller.irr()){
-            deltaX++;
-        }
-        position = new Position(position.getX()+deltaX, position.getY()+deltaY);
+        position = new Position(position.getX()+1, position.getY()+0);
+        setPosition(position);
     }
 
     @Override

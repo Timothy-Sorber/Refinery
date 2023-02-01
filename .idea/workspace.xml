@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Ima just stop commenting on these now.">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="hi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Size.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675130064469</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="hi">
+      <created>1675134702891</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675134702891</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +142,7 @@
     <MESSAGE value="Got the basics of drawing and GameObjects done." />
     <MESSAGE value="re-commit for the same reason as last time" />
     <MESSAGE value="Ima just stop commenting on these now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ima just stop commenting on these now." />
+    <MESSAGE value="hi" />
+    <option name="LAST_COMMIT_MESSAGE" value="hi" />
   </component>
 </project>
