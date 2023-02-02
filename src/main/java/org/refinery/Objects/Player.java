@@ -8,28 +8,27 @@ import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
     private Position position;
+    private Velocity v;
     public Input input;
     private util util;
 
-    public Player(Input input){
+    public Player(Input input, Position p, Size s, Velocity v){
         super();
         this.input = input;
-        this.position = getPosition();
+        this.position = p;
+        this.s = s;
+        this.v = v;
         util = new util();
     }
     @Override
     public void update() {
-        int deltaX = 0;
-        int deltaY = 0;
-        deltaX = util.randomint(5);
-        if (util.randombool()){
-            deltaX = deltaX*-1;
-        }
-        deltaY = util.randomint(5);
-        if (util.randombool()){
-            deltaY = deltaY*-1;
-        }
-        position = new Position(position.getX()+deltaX, position.getY()+deltaY);
+        v.setPosition(position);
+        v.update();
+        position = v.getPosition();
+        if (position.getX() > (1000 - s.getWidth())) {v.setVelocityx(v.getVelocityx() * -1);}
+        if (position.getX() < 0) {v.setVelocityx(v.getVelocityx() * -1);}
+        if (position.getY() > (1000 - s.getHeight())) {v.setVelocityy(v.getVelocityy() * -1);}
+        if (position.getY() < 0) {v.setVelocityy(v.getVelocityy() * -1);}
         setPosition(position);
     }
 

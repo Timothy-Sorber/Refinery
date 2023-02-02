@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="hi">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Refactored some stuff and made a shaking cube go on the screen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Velocity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +43,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -131,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675210747905</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactored some stuff and made a shaking cube go on the screen">
+      <created>1675289215020</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675289215021</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +158,7 @@
     <MESSAGE value="re-commit for the same reason as last time" />
     <MESSAGE value="Ima just stop commenting on these now." />
     <MESSAGE value="hi" />
-    <option name="LAST_COMMIT_MESSAGE" value="hi" />
+    <MESSAGE value="Refactored some stuff and made a shaking cube go on the screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored some stuff and made a shaking cube go on the screen" />
   </component>
 </project>

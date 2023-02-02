@@ -8,6 +8,7 @@ import java.awt.image.BufferStrategy;
 
 public class Window extends JFrame {
     private Canvas c;
+    public int width, height;
     public Window(int width, int height, Input input){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -18,7 +19,6 @@ public class Window extends JFrame {
         add(c);
         addKeyListener(input);
         pack();
-
         c.createBufferStrategy(3);
     }
 
@@ -28,13 +28,10 @@ public class Window extends JFrame {
 
         g.setColor(Color.BLACK);
         g.fillRect(0,0,c.getWidth(),c.getHeight());
+        g.setColor(Color.RED);
+        g.drawRect(0,0,1000, 1000);
 
-        game.getGameObjects().forEach(GameObject -> g.drawImage(
-                GameObject.getSprite(),
-                GameObject.getPosition().getX(),
-                GameObject.getPosition().getY(),
-                null
-        ));
+        game.getGameObjects().forEach(GameObject -> g.drawImage(GameObject.getSprite(), GameObject.getPosition().getX(), GameObject.getPosition().getY(), null));
 
         g.dispose();
         bufferStrategy.show();
