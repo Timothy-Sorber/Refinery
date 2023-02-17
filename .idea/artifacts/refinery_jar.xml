@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="refinery:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/refinery_jar</output-path>
+    <root id="archive" name="refinery.jar">
+      <element id="module-output" name="refinery" />
+    </root>
+  </artifact>
+</component>

@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="refinery:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Refactored some stuff and made a shaking cube go on the screen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Velocity.java" afterDir="false" />
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Made some rectangles spawn with random velocities and bounce off the sides of a box">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/refinery_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/RLIST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Square.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
@@ -46,7 +56,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -135,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675289215021</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Made some rectangles spawn with random velocities and bounce off the sides of a box">
+      <created>1675372898915</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675372898915</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +181,7 @@
     <MESSAGE value="Ima just stop commenting on these now." />
     <MESSAGE value="hi" />
     <MESSAGE value="Refactored some stuff and made a shaking cube go on the screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored some stuff and made a shaking cube go on the screen" />
+    <MESSAGE value="Made some rectangles spawn with random velocities and bounce off the sides of a box" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some rectangles spawn with random velocities and bounce off the sides of a box" />
   </component>
 </project>

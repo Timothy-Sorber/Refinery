@@ -1,4 +1,5 @@
 package org.refinery.game;
+import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.Input;
 import org.refinery.game.Game;
 
@@ -29,7 +30,7 @@ public class Window extends JFrame {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,c.getWidth(),c.getHeight());
         g.setColor(Color.RED);
-        g.drawRect(0,0,1000, 1000);
+        g.drawRect(0,0,getWidth(), getHeight());
 
         game.getGameObjects().forEach(GameObject -> g.drawImage(GameObject.getSprite(), GameObject.getPosition().getX(), GameObject.getPosition().getY(), null));
 

@@ -23,4 +23,8 @@ public class Position {
     public void setY(int y) {
         this.y = y;
     }
+
+    public int distanceTo(Position p1, Position p2) {
+        return (int) Math.sqrt((p1.getX() - p2.getX())^2 + (p1.getY() - p2.getY())^2);
+    }
 }
