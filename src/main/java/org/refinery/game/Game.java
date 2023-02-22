@@ -1,6 +1,6 @@
 package org.refinery.game;
 
-import org.refinery.Objects.Player;
+import org.refinery.Objects.Particle;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
 
@@ -16,12 +16,18 @@ public class Game {
     public Game(int width, int height){
         w = new Window(width, height, input);
         GameObjects = new ArrayList<>();
-        GameObjects.add(new Player(input, new Position(50, 50), new Size(u.randomint(150), u.randomint(150)), new Velocity(new Position(50, 50), u.randomint(20), u.randomint(20))));
-        GameObjects.add(new Player(input, new Position(500, 500), new Size(u.randomint(150), u.randomint(150)), new Velocity(new Position(50, 50), u.randomint(20), u.randomint(20))));
     }
 
     public void update(){
-        GameObjects.forEach(GameObject -> GameObject.update());
+        for (int i = 0; i < 5; i++){
+            GameObjects.add(new Particle());
+        }
+        for (int i = 0; i < GameObjects.size(); i++) {
+            GameObjects.get(i).update(w.width, w.height, GameObjects);
+            if (GameObjects.get(i).getState() == false){
+                GameObjects.remove(i);
+            }
+        }
     }
 
     public void render(){

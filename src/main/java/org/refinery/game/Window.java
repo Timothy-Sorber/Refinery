@@ -13,7 +13,6 @@ public class Window extends JFrame {
     public Window(int width, int height, Input input){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setLocationRelativeTo(null);
         setName("Refinery test window");
         c = new Canvas();
         c.setPreferredSize(new Dimension(width, height));

@@ -5,12 +5,14 @@ import org.refinery.Util.Size;
 import org.refinery.Util.Velocity;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class GameObject {
     protected Position p;
     protected Velocity v;
     protected Size s;
     public static String type;
+    public boolean state = true;
 
     public GameObject(String type) {
         p = new Position(50, 50);
@@ -19,7 +21,7 @@ public abstract class GameObject {
         this.type = type;
     }
 
-    public abstract void update();
+    public abstract void update(int screenwidth, int screenheight, List GameObjects);
     public abstract Image getSprite();
     public static String getObject(){
         return type;
@@ -32,8 +34,16 @@ public abstract class GameObject {
     public Size getSize() {
         return s;
     }
+    public void setSize(Size s) {this.s = s;}
 
     public void setPosition(Position p) {
         this.p = p;
+    }
+
+    public void destroy(){
+        state = false;
+    }
+    public boolean getState(){
+        return state;
     }
 }

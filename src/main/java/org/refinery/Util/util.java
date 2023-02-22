@@ -15,11 +15,11 @@ public class util {
         }
     }
 
-    public int randomint(int max){
+    public int randomint(int max, boolean zero){
         Random rand = new Random();
         return rand.nextInt(max);
     }
-    public long randomlong(long max){
+    public long randomlong(long max, boolean zero){
         Random rand = new Random();
         return rand.nextLong(max);
     }
@@ -28,5 +28,17 @@ public class util {
         return rand.nextBoolean();
     }
 
-
+    public int randomsignedint(int num, boolean zero){
+        Random rand = new Random();
+        int n = rand.nextInt(num);
+        if ((zero == false) && (n == 0)){
+            return randomsignedint(num, false);
+        }else{
+            if(randombool()){
+                return n;
+            }else{
+                return n*-1;
+            }
+        }
+    }
 }
