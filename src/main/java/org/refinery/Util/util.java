@@ -41,4 +41,8 @@ public class util {
             }
         }
     }
+
+    public int distanceto(Position pos1, Position pos2){
+        return (int) Math.sqrt((pos1.getX() - pos2.getX())^2 + (pos1.getY() - pos2.getY())^2);
+    }
 }

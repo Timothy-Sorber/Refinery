@@ -1,5 +1,6 @@
 package org.refinery.Util.GameObject;
 
+import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.Util.Velocity;
@@ -21,7 +22,7 @@ public abstract class GameObject {
         this.type = type;
     }
 
-    public abstract void update(int screenwidth, int screenheight, List GameObjects);
+    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects);
     public abstract Image getSprite();
     public static String getObject(){
         return type;
@@ -45,5 +46,11 @@ public abstract class GameObject {
     }
     public boolean getState(){
         return state;
+    }
+    public void setVelocity(Velocity velocity) {
+        this.v = velocity;
+    }
+    public Velocity getVelocity(){
+        return v;
     }
 }

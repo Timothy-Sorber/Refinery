@@ -9,6 +9,9 @@ public class Input implements KeyListener {
 
     public Input(){
         pressed = new Boolean[110];
+        for(int i = 0; i < pressed.length; i++){
+            pressed[i] = false;
+        }
     }
 
     public Boolean ispressed(int keycode){

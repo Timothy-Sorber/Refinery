@@ -1,8 +1,9 @@
 package org.refinery.game;
 
-import org.refinery.Objects.Particle;
+import org.refinery.Objects.Player;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
+import org.refinery.Util.List.GOlist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,22 +11,22 @@ import java.util.List;
 public class Game {
     private Window w;
     private List<GameObject> GameObjects;
+    private GOlist GOlist;
     private Input input = new Input();
     private util u = new util();
 
     public Game(int width, int height){
         w = new Window(width, height, input);
         GameObjects = new ArrayList<>();
+        GOlist = new GOlist();
+        GOlist.add(new Player(input));
     }
 
     public void update(){
-        for (int i = 0; i < 5; i++){
-            GameObjects.add(new Particle());
-        }
-        for (int i = 0; i < GameObjects.size(); i++) {
-            GameObjects.get(i).update(w.width, w.height, GameObjects);
-            if (GameObjects.get(i).getState() == false){
-                GameObjects.remove(i);
+        for (int i = 0; i < GOlist.size(); i++) {
+            GOlist.get(i).update(w.width, w.height, GOlist);
+            if (GOlist.get(i).getState() == false){
+                GOlist.delete(i);
             }
         }
     }
@@ -38,7 +39,7 @@ public class Game {
         return w;
     }
 
-    public List<GameObject> getGameObjects() {
-        return GameObjects;
+    public GOlist getGameObjects() {
+        return GOlist;
     }
 }
