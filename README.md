@@ -1,3 +1,3 @@
 # Refinery
 
-A automation game project in java
+An automation game project in java
