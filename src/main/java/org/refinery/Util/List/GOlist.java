@@ -5,12 +5,12 @@ import org.refinery.Util.GameObject.GameObject;
 import java.util.ArrayList;
 
 public class GOlist {
-    public ArrayList<GameObject> List;
+    public static ArrayList<GameObject> List;
     public GOlist(){
         List = new ArrayList<GameObject>();
     }
 
-    public void add(GameObject go){
+    public static void add(GameObject go){
         List.add(go);
     }
 
@@ -26,11 +26,11 @@ public class GOlist {
         List.remove(List.size());
     }
 
-    public GameObject get(int index){
+    public static GameObject get(int index){
         return List.get(index);
     }
 
-    public int size(){
+    public static int size(){
         return List.size();
     }
 }

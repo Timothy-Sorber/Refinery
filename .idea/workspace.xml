@@ -9,15 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Made some rectangles spawn with random velocities and bounce off the sides of a box">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/List/GOlist.java" afterDir="false" />
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="made a player object that has WASD control">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/TestParticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Rotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Vector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/thumbnail.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Particle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/List/GOlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/List/GOlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/ParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/ParticleEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +64,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources\Images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -168,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677091259029</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="made a player object that has WASD control">
+      <created>1677184972683</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677184972683</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +208,7 @@
     <MESSAGE value="hi" />
     <MESSAGE value="Refactored some stuff and made a shaking cube go on the screen" />
     <MESSAGE value="Made some rectangles spawn with random velocities and bounce off the sides of a box" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some rectangles spawn with random velocities and bounce off the sides of a box" />
+    <MESSAGE value="made a player object that has WASD control" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a player object that has WASD control" />
   </component>
 </project>
