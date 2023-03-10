@@ -14,6 +14,7 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
+    private int movey,movex;
     public Player(Input input){
         super("Player");
         setPosition(new Position(100,100));
@@ -24,22 +25,31 @@ public class Player extends GameObject {
 
     @Override
     public void update(int screenwidth, int screenheight, GOlist GameObjects) {
-        if (input.ispressed(68)){
+        int x = getPosition().getX();
+        int y = getPosition().getY();
+        if (movey<0&&!input.ispressed(87)){movey++;}
+        if (movey>0&&!input.ispressed(83)){movey--;}
+        if (movex<0&&!input.ispressed(65)){movex++;}
+        if (movex>0&&!input.ispressed(68)){movex--;}
+        if (input.ispressed(68)&&movex<20){
             //move left
-            setPosition(new Position(getPosition().getX()+10, getPosition().getY()));
+            movex++;
         }
-        if (input.ispressed(65)){
+        if (input.ispressed(65)&&movex>-20){
             //move right
-            setPosition(new Position(getPosition().getX()-10, getPosition().getY()));
+            movex--;
         }
-        if (input.ispressed(87)){
+        if (input.ispressed(87)&&movey>-20){
             //move up
-            setPosition(new Position(getPosition().getX(), getPosition().getY()-10));
+            movey--;
         }
-        if (input.ispressed(83)){
+        if (input.ispressed(83)&&movey<20){
             //move down
-            setPosition(new Position(getPosition().getX(), getPosition().getY()+10));
+            movey++;
         }
+        y+=movey;
+        x+=movex;
+        setPosition(new Position(x,y));
         color = new Color(util.randomint(255,false), util.randomint(255,false), util.randomint(255,false));
     }
 

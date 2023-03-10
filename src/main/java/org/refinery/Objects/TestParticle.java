@@ -16,30 +16,20 @@ public class TestParticle extends GameObject {
 
     public TestParticle() {
         super("Particle");
-        setSize(new Size(10,10));
+        setSize(new Size(50,50));
         setPosition(new Position(util.randomint(2000, true),100));
         setVelocity(new Velocity(getPosition(),0,0));
     }
 
     @Override
     public void update(int screenwidth, int screenheight, GOlist GameObjects) {
-        getVelocity().update();
-        getVelocity().setVelocityy(getVelocity().getVelocityy()+1);
-        setPosition(v.getPosition());
-        for(int i = 0; i < GameObjects.size(); i++) {
-            GameObject obj = GOlist.get(i);
-            if (util.distanceto(getPosition(), obj.getPosition())<100){
-                int dx = getPosition().getX() - obj.getPosition().getX();
-                int dy = getPosition().getY() - obj.getPosition().getY();
-                getVelocity().setVelocityx(getVelocity().getVelocityx()-Integer.signum(dx));
-                getVelocity().setVelocityy(getVelocity().getVelocityy()-Integer.signum(dy));
-            }
-            if (util.distanceto(getPosition(), obj.getPosition())<50){
-                int dx = getPosition().getX() - obj.getPosition().getX();
-                int dy = getPosition().getY() - obj.getPosition().getY();
-                getVelocity().setVelocityx(getVelocity().getVelocityx()+Integer.signum(dx));
-                getVelocity().setVelocityy(getVelocity().getVelocityy()+Integer.signum(dy));
-            }
+        int x = getPosition().getX();
+        int y = getPosition().getY();
+        for (int i=0; i<GameObjects.size(); i++) {
+            GameObject obj = GameObjects.get(i);
+            int dx = x-obj.getPosition().getX();
+            int dy = y-obj.getPosition().getY();
+            setPosition(new Position(x-(dx/5),y-(dy/5)));
         }
     }
 

@@ -23,6 +23,7 @@ public class Game {
         GameObjects = new ArrayList<>();
         GOlist = new GOlist();
         GOlist.add(new Player(input));
+        GOlist.add(new TestParticle());
     }
 
     public void update(int FPS, int UPS){
