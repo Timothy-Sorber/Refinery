@@ -27,8 +27,9 @@ public class Game {
     }
 
     public void update(int FPS, int UPS){
+        w.update();
         for (int i = 0; i < GOlist.size(); i++) {
-            GOlist.get(i).update(w.width, w.height, GOlist);
+            GOlist.get(i).update(w.width, w.height, GOlist, this);
             if (GOlist.get(i).getState() == false){
                 GOlist.delete(i);
             }

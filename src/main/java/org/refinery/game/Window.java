@@ -13,10 +13,15 @@ public class Window extends JFrame {
     public int width, height;
     public Color bgcolor;
     private util util = new util();
+    public int realitivex, realitivey;
+    public Input input;
     public Window(int width, int height, Input input){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setName("Refinery test window");
+        realitivex = 0;
+        realitivey = 0;
+        this.input = input;
         bgcolor = new Color(0,0,0);
         c = new Canvas();
         c.setPreferredSize(new Dimension(width, height));
@@ -26,6 +31,20 @@ public class Window extends JFrame {
         addKeyListener(input);
         pack();
         c.createBufferStrategy(3);
+    }
+    public void update(){
+        if (input.ispressed(68)){
+            realitivex-=10;
+        }
+        if (input.ispressed(65)){
+            realitivex+=10;
+        }
+        if (input.ispressed(87)){
+            realitivey+=10;
+        }
+        if (input.ispressed(83)){
+            realitivey-=10;
+        }
     }
 
     public void render(Game game){
@@ -42,8 +61,8 @@ public class Window extends JFrame {
             go = gameobjects.get(i);
             g.drawImage(
                     go.getSprite(),
-                    go.getPosition().getX(),
-                    go.getPosition().getY(),
+                    go.getPosition().getX()+realitivex,
+                    go.getPosition().getY()+realitivey,
                     null
             );
         }

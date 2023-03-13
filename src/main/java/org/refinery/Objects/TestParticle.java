@@ -6,6 +6,7 @@ import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.Util.Velocity;
 import org.refinery.Util.util;
+import org.refinery.game.Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -22,11 +23,11 @@ public class TestParticle extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects) {
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
         int x = getPosition().getX();
         int y = getPosition().getY();
         for (int i=0; i<GameObjects.size(); i++) {
-            GameObject obj = GameObjects.get(i);
+            GameObject obj = GOlist.get(i);
             int dx = x-obj.getPosition().getX();
             int dy = y-obj.getPosition().getY();
             setPosition(new Position(x-(dx/5),y-(dy/5)));

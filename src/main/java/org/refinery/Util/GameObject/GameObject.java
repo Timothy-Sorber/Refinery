@@ -4,6 +4,7 @@ import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.Util.Velocity;
+import org.refinery.game.Game;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -20,9 +21,10 @@ public abstract class GameObject {
         s = new Size(100, 100);
         v = new Velocity(p,0,0);
         this.type = type;
+        System.out.println(this.type);
     }
 
-    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects);
+    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects, Game game);
     public abstract Image getSprite();
     public static String getObject(){
         return type;
@@ -52,5 +54,9 @@ public abstract class GameObject {
     }
     public Velocity getVelocity(){
         return v;
+    }
+
+    public static String getType() {
+        return type;
     }
 }

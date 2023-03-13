@@ -6,6 +6,7 @@ import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
+import org.refinery.game.Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -14,7 +15,7 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
-    private int movey,movex;
+    private int movey,movex,cooldown;
     public Player(Input input){
         super("Player");
         setPosition(new Position(100,100));
@@ -24,32 +25,37 @@ public class Player extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects) {
-        int x = getPosition().getX();
-        int y = getPosition().getY();
-        if (movey<0&&!input.ispressed(87)){movey++;}
-        if (movey>0&&!input.ispressed(83)){movey--;}
-        if (movex<0&&!input.ispressed(65)){movex++;}
-        if (movex>0&&!input.ispressed(68)){movex--;}
-        if (input.ispressed(68)&&movex<20){
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
+        //int x = getPosition().getX();
+        //int y = getPosition().getY();
+        //if (movey<0&&!input.ispressed(87)){movey++;}
+        //if (movey>0&&!input.ispressed(83)){movey--;}
+        //if (movex<0&&!input.ispressed(65)){movex++;}
+        //if (movex>0&&!input.ispressed(68)){movex--;}
+        //if (input.ispressed(68)&&movex<20){
             //move left
-            movex++;
-        }
-        if (input.ispressed(65)&&movex>-20){
+        //    movex++;
+        //}
+        //if (input.ispressed(65)&&movex>-20){
             //move right
-            movex--;
-        }
-        if (input.ispressed(87)&&movey>-20){
+        //    movex--;
+        //}
+        //if (input.ispressed(87)&&movey>-20){
             //move up
-            movey--;
-        }
-        if (input.ispressed(83)&&movey<20){
+        //    movey--;
+        //}
+        //if (input.ispressed(83)&&movey<20){
             //move down
-            movey++;
-        }
-        y+=movey;
-        x+=movex;
-        setPosition(new Position(x,y));
+        //    movey++;
+        //}
+        //if (input.ispressed(70)&&cooldown<=0){
+            //cooldown=60;
+          //  GOlist.add(new TestParticle());
+        //}
+        //y+=movey;
+        //x+=movex;
+        //if(cooldown>0){cooldown--;}
+        //setPosition(new Position(x,y));
         color = new Color(util.randomint(255,false), util.randomint(255,false), util.randomint(255,false));
     }
 
