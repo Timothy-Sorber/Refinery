@@ -15,7 +15,7 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
-    private int movey,movex,cooldown;
+    private int cooldown = 0;
     public Player(Input input){
         super("Player");
         setPosition(new Position(100,100));
@@ -26,36 +26,24 @@ public class Player extends GameObject {
 
     @Override
     public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
-        //int x = getPosition().getX();
-        //int y = getPosition().getY();
-        //if (movey<0&&!input.ispressed(87)){movey++;}
-        //if (movey>0&&!input.ispressed(83)){movey--;}
-        //if (movex<0&&!input.ispressed(65)){movex++;}
-        //if (movex>0&&!input.ispressed(68)){movex--;}
-        //if (input.ispressed(68)&&movex<20){
-            //move left
-        //    movex++;
-        //}
-        //if (input.ispressed(65)&&movex>-20){
-            //move right
-        //    movex--;
-        //}
-        //if (input.ispressed(87)&&movey>-20){
-            //move up
-        //    movey--;
-        //}
-        //if (input.ispressed(83)&&movey<20){
-            //move down
-        //    movey++;
-        //}
-        //if (input.ispressed(70)&&cooldown<=0){
-            //cooldown=60;
-          //  GOlist.add(new TestParticle());
-        //}
-        //y+=movey;
-        //x+=movex;
-        //if(cooldown>0){cooldown--;}
-        //setPosition(new Position(x,y));
+        int camerax = game.getCameraPosition().getX();
+        int cameray = game.getCameraPosition().getY();
+        int x=getPosition().getX();
+        int y=getPosition().getY();
+        Window w = game.Window();
+        if (input.ispressed(68)){
+            x+=10;
+        }
+        if (input.ispressed(65)){
+            x-=10;
+        }
+        if (input.ispressed(87)){
+            y-=10;
+        }
+        if (input.ispressed(83)){
+            y+=10;
+        }
+        setPosition(new Position(x,y));
         color = new Color(util.randomint(255,false), util.randomint(255,false), util.randomint(255,false));
     }
 

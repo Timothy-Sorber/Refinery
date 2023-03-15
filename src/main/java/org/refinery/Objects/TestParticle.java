@@ -28,9 +28,11 @@ public class TestParticle extends GameObject {
         int y = getPosition().getY();
         for (int i=0; i<GameObjects.size(); i++) {
             GameObject obj = GOlist.get(i);
-            int dx = x-obj.getPosition().getX();
-            int dy = y-obj.getPosition().getY();
-            setPosition(new Position(x-(dx/5),y-(dy/5)));
+            int dx = x - obj.getPosition().getX();
+            int dy = y - obj.getPosition().getY();
+            x-=dx/40+util.randomsignedint(2, true);
+            y-=dy/40+util.randomsignedint(2, true);
+            setPosition(new Position(x, y));
         }
     }
 

@@ -2,6 +2,7 @@ package org.refinery.game;
 
 import org.refinery.Objects.Player;
 import org.refinery.Objects.TestParticle;
+import org.refinery.PlayerController;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.List.GOlist;
@@ -23,7 +24,9 @@ public class Game {
         GameObjects = new ArrayList<>();
         GOlist = new GOlist();
         GOlist.add(new Player(input));
-        GOlist.add(new TestParticle());
+        for (int i = 0; i<10; i++){
+            GOlist.add(new TestParticle());
+        }
     }
 
     public void update(int FPS, int UPS){
@@ -48,5 +51,12 @@ public class Game {
 
     public GOlist getGameObjects() {
         return GOlist;
+    }
+
+    public Position getCameraPosition() {
+        return w.getPosition();
+    }
+    public Window Window() {
+        return w;
     }
 }

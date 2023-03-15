@@ -2,6 +2,8 @@ package org.refinery.game;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
+import org.refinery.Util.Position;
+import org.refinery.Util.Size;
 import org.refinery.Util.util;
 
 import javax.swing.*;
@@ -33,18 +35,7 @@ public class Window extends JFrame {
         c.createBufferStrategy(3);
     }
     public void update(){
-        if (input.ispressed(68)){
-            realitivex-=10;
-        }
-        if (input.ispressed(65)){
-            realitivex+=10;
-        }
-        if (input.ispressed(87)){
-            realitivey+=10;
-        }
-        if (input.ispressed(83)){
-            realitivey-=10;
-        }
+
     }
 
     public void render(Game game){
@@ -70,5 +61,9 @@ public class Window extends JFrame {
         g.drawString("UPS: " + game.ups, 10, 40);
         g.dispose();
         bufferStrategy.show();
+    }
+
+    public Position getPosition() {
+        return new Position(realitivex, realitivey);
     }
 }

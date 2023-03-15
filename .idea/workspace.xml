@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Smooth player movement and a circle that chases you lol">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Instead if the player moving, the camera moves.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/TestParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/TestParticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678449679367</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Instead if the player moving, the camera moves.">
+      <created>1678666354299</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678666354299</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +226,7 @@
     <MESSAGE value="made a player object that has WASD control" />
     <MESSAGE value="Just updating for backup reasons" />
     <MESSAGE value="Smooth player movement and a circle that chases you lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Smooth player movement and a circle that chases you lol" />
+    <MESSAGE value="Instead if the player moving, the camera moves." />
+    <option name="LAST_COMMIT_MESSAGE" value="Instead if the player moving, the camera moves." />
   </component>
 </project>
