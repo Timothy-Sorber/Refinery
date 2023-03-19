@@ -1,7 +1,9 @@
 package org.refinery.game;
 import org.refinery.Util.GameObject.GameObject;
+import org.refinery.Util.GameObject.UI.UI;
 import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
+import org.refinery.Util.List.UIlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.Util.util;
@@ -46,7 +48,11 @@ public class Window extends JFrame {
         g.fillRect(0,0,c.getWidth(),c.getHeight());
         g.setColor(Color.RED);
         g.drawRect(0,0,getWidth(), getHeight());
+        //get GameObject and UI lists
         GOlist gameobjects = game.getGameObjects();
+        UIlist UI = game.getUI();
+
+        //render GameObjects
         GameObject go;
         for(int i = 0; i < gameobjects.size(); i++){
             go = gameobjects.get(i);
@@ -57,6 +63,20 @@ public class Window extends JFrame {
                     null
             );
         }
+
+        UI ui;
+        for(int i = 0; i < UI.size(); i++){
+            ui = UI.get(i);
+            g.drawImage(
+                    ui.getSprite(),
+                    ui.getPosition().getX(),
+                    ui.getPosition().getY(),
+                    null
+            );
+            g.setColor(Color.BLACK);
+            g.drawString(ui.getLabel(), ui.getLabelpos().getX(), ui.getLabelpos().getY());
+        }
+        g.setColor(Color.RED);
         g.drawString("FPS: " + game.fps, 10, 20);
         g.drawString("UPS: " + game.ups, 10, 40);
         g.dispose();

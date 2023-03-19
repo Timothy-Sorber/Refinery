@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 public class TestParticle extends GameObject {
 
     private util util = new util();
+    int rr,timealive;
 
     public TestParticle() {
         super("Particle");
@@ -23,16 +24,22 @@ public class TestParticle extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr) {
+        timealive++;
+        if (timealive>=60){
+            destroy();
+        }
         int x = getPosition().getX();
         int y = getPosition().getY();
         for (int i=0; i<GameObjects.size(); i++) {
             GameObject obj = GOlist.get(i);
-            int dx = x - obj.getPosition().getX();
-            int dy = y - obj.getPosition().getY();
-            x-=dx/40+util.randomsignedint(2, true);
-            y-=dy/40+util.randomsignedint(2, true);
-            setPosition(new Position(x, y));
+            if (obj!=this) {
+                int dx = x - obj.getPosition().getX();
+                int dy = y - obj.getPosition().getY();
+                x -= dx / 40 + util.randomsignedint(rr, true);
+                y -= dy / 40 + util.randomsignedint(rr, true);
+                setPosition(new Position(x, y));
+            }
         }
     }
 

@@ -13,7 +13,7 @@ public abstract class GameObject {
     protected Position p;
     protected Velocity v;
     protected Size s;
-    public static String type;
+    protected String type;
     public boolean state = true;
 
     public GameObject(String type) {
@@ -21,15 +21,10 @@ public abstract class GameObject {
         s = new Size(100, 100);
         v = new Velocity(p,0,0);
         this.type = type;
-        System.out.println(this.type);
     }
 
-    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects, Game game);
+    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr);
     public abstract Image getSprite();
-    public static String getObject(){
-        return type;
-    }
-
     public Position getPosition() {
         return p;
     }
@@ -56,7 +51,7 @@ public abstract class GameObject {
         return v;
     }
 
-    public static String getType() {
+    public String getType() {
         return type;
     }
 }

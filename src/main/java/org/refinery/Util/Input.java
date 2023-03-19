@@ -11,6 +11,8 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
 
     public Input(){
         pressed = new Boolean[110];
+        MousePressed = false;
+        MouseClicked = false;
         for(int i = 0; i < pressed.length; i++){
             pressed[i] = false;
         }
@@ -73,5 +75,17 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
     @Override
     public void mouseMoved(MouseEvent e) {
         PointerPosition = new Position(e.getX(), e.getY());
+    }
+
+    public Position getPointerPosition() {
+        return PointerPosition;
+    }
+
+    public Boolean getMouseClicked() {
+        return MouseClicked;
+    }
+
+    public Boolean getMousePressed() {
+        return MousePressed;
     }
 }

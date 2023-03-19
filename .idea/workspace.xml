@@ -9,10 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Instead if the player moving, the camera moves.">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Removed the effects of the previous commit and made the TestParticles move randomly along with the default movement.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/UI/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/UI/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/List/UIlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/TestParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/TestParticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
@@ -34,6 +41,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="o72iyukj" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -198,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678666354299</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Removed the effects of the previous commit and made the TestParticles move randomly along with the default movement.">
+      <created>1678897112069</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678897112069</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +244,7 @@
     <MESSAGE value="Just updating for backup reasons" />
     <MESSAGE value="Smooth player movement and a circle that chases you lol" />
     <MESSAGE value="Instead if the player moving, the camera moves." />
-    <option name="LAST_COMMIT_MESSAGE" value="Instead if the player moving, the camera moves." />
+    <MESSAGE value="Removed the effects of the previous commit and made the TestParticles move randomly along with the default movement." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the effects of the previous commit and made the TestParticles move randomly along with the default movement." />
   </component>
 </project>

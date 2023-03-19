@@ -30,7 +30,7 @@ public class util {
 
     public int randomsignedint(int num, boolean zero){
         Random rand = new Random();
-        int n = rand.nextInt(num);
+        int n = rand.nextInt(num*Integer.signum(num));
         if ((zero == false) && (n == 0)){
             return randomsignedint(num, false);
         }else{

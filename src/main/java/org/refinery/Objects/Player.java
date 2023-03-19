@@ -15,7 +15,6 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
-    private int cooldown = 0;
     public Player(Input input){
         super("Player");
         setPosition(new Position(100,100));
@@ -25,7 +24,7 @@ public class Player extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr) {
         int camerax = game.getCameraPosition().getX();
         int cameray = game.getCameraPosition().getY();
         int x=getPosition().getX();
