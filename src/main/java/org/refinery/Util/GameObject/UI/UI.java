@@ -10,10 +10,11 @@ import java.awt.image.BufferedImage;
 public abstract class UI {
     protected Size size;
     protected Position position,labelpos;
-    protected Color color;
+    protected Color color,labelcolor;
     protected String name;
     protected String label;
     protected Input input;
+    protected Boolean visible;
 
     public UI(String name){
         //Default settings for a UI element
@@ -22,6 +23,8 @@ public abstract class UI {
         color = new Color(100,100,255);
         label = "Unlabeled";
         labelpos = new Position(0,0);
+        labelcolor = new Color(0,0,0);
+        visible = true;
     }
 
     public abstract void asMouseOver();
@@ -34,7 +37,7 @@ public abstract class UI {
         Graphics2D g = i.createGraphics();
         g.setColor(color);
         g.fillRect(0,0,size.getWidth(),size.getHeight());
-        g.setColor(Color.BLACK);
+        g.setColor(labelcolor);
         g.drawString(label, labelpos.getX(), labelpos.getY());
         g.dispose();
         return i;
@@ -82,5 +85,21 @@ public abstract class UI {
 
     public void setLabelpos(Position labelpos) {
         this.labelpos = labelpos;
+    }
+
+    public Color getLabelcolor() {
+        return labelcolor;
+    }
+
+    public void setLabelcolor(Color labelcolor) {
+        this.labelcolor = labelcolor;
+    }
+
+    public Boolean Visible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 }

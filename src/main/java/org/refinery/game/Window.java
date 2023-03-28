@@ -1,8 +1,10 @@
 package org.refinery.game;
 import org.refinery.Util.GameObject.GameObject;
+import org.refinery.Util.GameObject.Ground;
 import org.refinery.Util.GameObject.UI.UI;
 import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
+import org.refinery.Util.List.GRlist;
 import org.refinery.Util.List.UIlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
@@ -20,9 +22,10 @@ public class Window extends JFrame {
     public int realitivex, realitivey;
     public Input input;
     public Window(int width, int height, Input input){
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setName("Refinery test window");
+        setTitle("Refinery test window");
+        setExtendedState(MAXIMIZED_BOTH);
         realitivex = 0;
         realitivey = 0;
         this.input = input;
@@ -48,9 +51,22 @@ public class Window extends JFrame {
         g.fillRect(0,0,c.getWidth(),c.getHeight());
         g.setColor(Color.RED);
         g.drawRect(0,0,getWidth(), getHeight());
-        //get GameObject and UI lists
+        //get GameObject, UI, and Ground lists
         GOlist gameobjects = game.getGameObjects();
         UIlist UI = game.getUI();
+        GRlist GR = game.getGround();
+
+        //render Ground
+        Ground ground;
+        for (int i=0; i < GR.size(); i++){
+            ground = GR.get(i);
+            g.drawImage(
+                    ground.getSprite(),
+                    ground.getPosition().getX(),
+                    ground.getPosition().getY(),
+                    null
+            );
+        }
 
         //render GameObjects
         GameObject go;
@@ -64,17 +80,18 @@ public class Window extends JFrame {
             );
         }
 
+        //render UI
         UI ui;
         for(int i = 0; i < UI.size(); i++){
             ui = UI.get(i);
-            g.drawImage(
-                    ui.getSprite(),
-                    ui.getPosition().getX(),
-                    ui.getPosition().getY(),
-                    null
-            );
-            g.setColor(Color.BLACK);
-            g.drawString(ui.getLabel(), ui.getLabelpos().getX(), ui.getLabelpos().getY());
+            if (ui.Visible()) {
+                g.drawImage(
+                        ui.getSprite(),
+                        ui.getPosition().getX(),
+                        ui.getPosition().getY(),
+                        null
+                );
+            }
         }
         g.setColor(Color.RED);
         g.drawString("FPS: " + game.fps, 10, 20);

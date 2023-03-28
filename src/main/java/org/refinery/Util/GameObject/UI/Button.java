@@ -12,11 +12,12 @@ public class Button extends UI{
     public Boolean click = false;
     public Button(String name, GOlist GOlist) {
         super(name);
-        setPosition(new Position(500,0));
+        setPosition(new Position(500,250));
         setSize(new Size(200,50));
         setLabel("Test Button");
         setLabelpos(new Position(100,25));
         setColor(Color.BLUE);
+        setLabelcolor(Color.RED);
         mouseover=false;
     }
 

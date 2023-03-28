@@ -23,7 +23,7 @@ public abstract class GameObject {
         this.type = type;
     }
 
-    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr);
+    public abstract void update(int screenwidth, int screenheight, GOlist GameObjects, Game game);
     public abstract Image getSprite();
     public Position getPosition() {
         return p;

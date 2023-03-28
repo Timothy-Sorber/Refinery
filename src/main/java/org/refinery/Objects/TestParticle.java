@@ -24,7 +24,7 @@ public class TestParticle extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr) {
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
         timealive++;
         if (timealive>=60){
             destroy();
@@ -36,8 +36,8 @@ public class TestParticle extends GameObject {
             if (obj!=this) {
                 int dx = x - obj.getPosition().getX();
                 int dy = y - obj.getPosition().getY();
-                x -= dx / 40 + util.randomsignedint(rr, true);
-                y -= dy / 40 + util.randomsignedint(rr, true);
+                x -= dx / 40 + util.randomsignedint(5, true);
+                y -= dy / 40 + util.randomsignedint(5, true);
                 setPosition(new Position(x, y));
             }
         }
@@ -45,7 +45,7 @@ public class TestParticle extends GameObject {
 
     @Override
     public Image getSprite() {
-        BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = i.createGraphics();
         g.setColor(Color.blue);
         g.fillOval(0,0, i.getWidth(), i.getHeight());

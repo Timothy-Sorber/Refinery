@@ -24,7 +24,7 @@ public class Player extends GameObject {
     }
 
     @Override
-    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game, int rr) {
+    public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
         int camerax = game.getCameraPosition().getX();
         int cameray = game.getCameraPosition().getY();
         int x=getPosition().getX();
@@ -48,7 +48,7 @@ public class Player extends GameObject {
 
     @Override
     public Image getSprite() {
-        BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = i.createGraphics();
         g.setColor(color);
         g.fillRect(0, 0, i.getWidth()/4, i.getHeight()/4);

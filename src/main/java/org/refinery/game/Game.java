@@ -1,5 +1,6 @@
 package org.refinery.game;
 
+import org.refinery.Ground.TestGround;
 import org.refinery.Objects.Player;
 import org.refinery.Objects.TestParticle;
 import org.refinery.Util.*;
@@ -17,9 +18,11 @@ public class Game {
     private List<GameObject> GameObjects;
     private GOlist GOlist;
     private UIlist UIlist;
+    private GRlist GRlist;
     private Input input = new Input();
+    private Input playerinput = new Input();
     private util u = new util();
-    public int fps,ups,rr,cooldown;
+    public int fps,ups,cooldown;
 
     public Game(int width, int height){
         input.clearMouseClick();
@@ -27,9 +30,11 @@ public class Game {
         GameObjects = new ArrayList<>();
         GOlist = new GOlist();
         UIlist = new UIlist();
-        GOlist.add(new Player(input));
+        GRlist = new GRlist();
+        GOlist.add(new Player(playerinput));
         UIlist.add(new Button("TestButton", GOlist));
-        rr=2;
+        GRlist.add(new TestGround(new Position(0,0)));
+        GRlist.add(new TestGround(new Position(1,1)));
         cooldown=0;
         for (int i = 0; i<10; i++){
             GOlist.add(new TestParticle());
@@ -39,7 +44,7 @@ public class Game {
     public void update(int FPS, int UPS){
         w.update();
         for (int i = 0; i < GOlist.size(); i++) {
-            GOlist.get(i).update(w.width, w.height, GOlist, this, rr);
+            GOlist.get(i).update(w.width, w.height, GOlist, this);
             if (GOlist.get(i).getState() == false){
                 GOlist.delete(i);
             }
@@ -55,16 +60,17 @@ public class Game {
                     &&(my>UY&&my<(UY+UI.getSize().getHeight()))
             ){
                 UI.asMouseOver();
-                if (input.getMousePressed()){
-                    UI.asMouseDown();
-                }else{
-                    UI.asMouseUp();
+                if (UI.Visible()) {
+                    if (input.getMousePressed()) {
+                        UI.asMouseDown();
+                    } else {
+                        UI.asMouseUp();
+                    }
                 }
             }else{
                 UI.asMouseAway();
             }
         }
-        rr=GOlist.size();
         fps = FPS;
         ups = UPS;
     }
@@ -81,6 +87,10 @@ public class Game {
         return GOlist;
     }
     public UIlist getUI() {return UIlist;}
+
+    public GRlist getGround() {
+        return GRlist;
+    }
 
     public Position getCameraPosition() {
         return w.getPosition();
