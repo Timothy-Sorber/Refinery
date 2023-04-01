@@ -1,16 +1,21 @@
 package org.refinery.Util.GameObject.UI;
 
+import org.refinery.Ground.Grass;
 import org.refinery.Objects.TestParticle;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
+import org.refinery.Util.util;
+import org.refinery.game.Game;
 
 import java.awt.*;
 
 public class Button extends UI{
     public Boolean mouseover;
     public Boolean click = false;
-    public Button(String name, GOlist GOlist) {
+    public Game game;
+    public util util = new util();
+    public Button(String name, GOlist GOlist, Game game) {
         super(name);
         setPosition(new Position(500,250));
         setSize(new Size(200,50));
@@ -19,6 +24,7 @@ public class Button extends UI{
         setColor(Color.BLUE);
         setLabelcolor(Color.RED);
         mouseover=false;
+        this.game=game;
     }
 
     @Override
@@ -31,8 +37,8 @@ public class Button extends UI{
     public void asMouseDown() {
         if (mouseover&&!click){
             setColor(Color.CYAN);
-            GOlist.add(new TestParticle());
-            click = true;
+            util.replaceGround(new Position(0,0), new Grass(new Position(0,0)), game.getGround());
+            System.out.println(game.getGround().size());
         }
     }
 

@@ -15,7 +15,7 @@ public abstract class Ground {
     public abstract BufferedImage getSprite();
 
     public Position getPosition() {
-        return position;
+        return new Position(position.getX()/100, position.getY()/100);
     }
 
     public void setPosition(Position position) {

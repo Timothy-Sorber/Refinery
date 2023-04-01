@@ -10,6 +10,9 @@ import org.refinery.Util.GameObject.UI.Button;
 import org.refinery.Util.List.*;
 
 import java.awt.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +34,40 @@ public class Game {
         GOlist = new GOlist();
         UIlist = new UIlist();
         GRlist = new GRlist();
-        GOlist.add(new Player(playerinput));
-        UIlist.add(new Button("TestButton", GOlist));
-        GRlist.add(new TestGround(new Position(0,0)));
-        GRlist.add(new TestGround(new Position(1,1)));
+        GOlist.add(new Player());
+        UIlist.add(new Button("TestButton", GOlist, this));
+        int layers = 11;
+        int tpl = 20;
+        for(int i = 0; i < layers; i++){
+            for(int j = 0; j<tpl; j++){
+                GRlist.add(new TestGround(new Position(j,i)));
+            }
+        }
         cooldown=0;
         for (int i = 0; i<10; i++){
             GOlist.add(new TestParticle());
+        }
+        firstload();
+    }
+
+    public void runmods(){
+
+    }
+
+    public void firstload(){
+        try {
+            File modsf = new File("./game/mods");
+            if (!modsf.exists()) {
+                modsf.mkdirs();
+                File readme = new File("./game/mods/readme.txt");
+                readme.createNewFile();
+                readme.setWritable(true);
+                FileWriter Writer = new FileWriter("./game/mods/readme.txt");
+                Writer.write("Yes, this will have mod support. How to prepare for when it's implemented? Well, create a java project, add this as a dependency and use 'org.refinery.Modding.mod' and extend it to prepare ;)");
+                Writer.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

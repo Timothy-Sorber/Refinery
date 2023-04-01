@@ -15,11 +15,11 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
-    public Player(Input input){
+    public Player(){
         super("Player");
         setPosition(new Position(100,100));
         setSize(new Size(50,50));
-        this.input = input;
+        this.input = new Input();
         color = new Color(0,0,255);
     }
 
