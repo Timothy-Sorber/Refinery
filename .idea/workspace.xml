@@ -9,20 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Full list of changes:&#10;1. Added grounds, they render behind everything and can be made be extending the &quot;Ground&quot; class&#10;2. Rather than using &quot;TYPE_INT_RGB&quot; (which makes it so the image isn't transparent) I switched to ARGB which makes the images transparent.&#10;&#10;The input is still bugged and I have no idea what to do.">
-      <change afterPath="$PROJECT_DIR$/Modding/ReadMe.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modding/refinery.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Ground/Grass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Modding/mod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/FileUtils.java" afterDir="false" />
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Modding is underway!&#10;&#10;you can get started by reading the ReadMe in 'Modding/ReadMe.txt'&#10;&#10;this won't work for a bit but you can set it up for later.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Ground/TestGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Ground/TestGround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/Ground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/UI/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/UI/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680000461899</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Modding is underway!&#10;&#10;you can get started by reading the ReadMe in 'Modding/ReadMe.txt'&#10;&#10;this won't work for a bit but you can set it up for later.">
+      <created>1680318114525</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680318114525</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +264,7 @@
     <MESSAGE value="Removed the effects of the previous commit and made the TestParticles move randomly along with the default movement." />
     <MESSAGE value="Added a UI system with the Button.java being a test for it. All UI elements are rendered over GameObjects so menus/inventories will work properly in the future." />
     <MESSAGE value="Full list of changes:&#10;1. Added grounds, they render behind everything and can be made be extending the &quot;Ground&quot; class&#10;2. Rather than using &quot;TYPE_INT_RGB&quot; (which makes it so the image isn't transparent) I switched to ARGB which makes the images transparent.&#10;&#10;The input is still bugged and I have no idea what to do." />
-    <option name="LAST_COMMIT_MESSAGE" value="Full list of changes:&#10;1. Added grounds, they render behind everything and can be made be extending the &quot;Ground&quot; class&#10;2. Rather than using &quot;TYPE_INT_RGB&quot; (which makes it so the image isn't transparent) I switched to ARGB which makes the images transparent.&#10;&#10;The input is still bugged and I have no idea what to do." />
+    <MESSAGE value="Modding is underway!&#10;&#10;you can get started by reading the ReadMe in 'Modding/ReadMe.txt'&#10;&#10;this won't work for a bit but you can set it up for later." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modding is underway!&#10;&#10;you can get started by reading the ReadMe in 'Modding/ReadMe.txt'&#10;&#10;this won't work for a bit but you can set it up for later." />
   </component>
 </project>

@@ -15,4 +15,4 @@ How to make and an element to the game:
     * With the 'game' variable in your 'onEnable' method
         Use 'game.getGameObjects().add();' and put a new instance of your object in the parameters of add. - adds a gameobject.
         Use 'game.getUI().add();' and put a new instance of your UI in the parameters of add. - adds a UI element.
-        Grounds are not fully implemented but use 'game.getGround.add();' to add some if you want.
+        Use 'game.getGround().add();' to add ground.
