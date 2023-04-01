@@ -3,7 +3,7 @@ Yes! There will be mod support, Use the .jar file as a dependency and import 'or
 More detailed instructions:
 1. Create a java project and use any IDE of your choice.
 2. Use refinery.jar as a dependency and import 'org.refinery.Modding.mod' into your main class.
-3. Extend your main class with 'mod' and add an 'onEnable' method (You IDE should use autocomplete), use the 'game' variable to interact with the game. (e.g. adding ground, objects or even UI!)
+3. Extend your main class with 'mod' and add an 'onEnable' method (Your IDE should use autocomplete), use the 'game' variable to interact with the game. (e.g. adding ground, objects or even UI!)
 
 How to make an object:
 1. Create a class and extend it with 'GameObject'.
