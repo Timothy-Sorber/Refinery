@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class UIlist {
     public static ArrayList<UI> List;
     public UIlist(){
-        List = new ArrayList<UI>();
+        List = new ArrayList<>();
     }
 
     public static void add(UI element){

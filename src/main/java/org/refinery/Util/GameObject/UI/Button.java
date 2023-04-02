@@ -1,6 +1,7 @@
 package org.refinery.Util.GameObject.UI;
 
 import org.refinery.Ground.Grass;
+import org.refinery.Ground.TestGround;
 import org.refinery.Objects.TestParticle;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
@@ -9,20 +10,17 @@ import org.refinery.Util.util;
 import org.refinery.game.Game;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Button extends UI{
     public Boolean mouseover;
     public Boolean click = false;
     public Game game;
     public util util = new util();
-    public Button(String name, GOlist GOlist, Game game) {
-        super(name);
+    public Button(GOlist GOlist, Game game) {
+        super();
         setPosition(new Position(500,250));
         setSize(new Size(200,50));
-        setLabel("Test Button");
-        setLabelpos(new Position(100,25));
-        setColor(Color.BLUE);
-        setLabelcolor(Color.RED);
         mouseover=false;
         this.game=game;
     }
@@ -30,26 +28,40 @@ public class Button extends UI{
     @Override
     public void asMouseOver() {
         mouseover=true;
-        setColor(new Color(0,100,255));
     }
 
     @Override
     public void asMouseDown() {
-        if (mouseover&&!click){
-            setColor(Color.CYAN);
-            util.replaceGround(new Position(0,0), new Grass(new Position(0,0)), game.getGround());
-            System.out.println(game.getGround().size());
+        if (mouseover){
+            game.getGameObjects().add(new TestParticle());
         }
     }
 
     @Override
     public void asMouseAway() {
         mouseover=false;
-        setColor(Color.BLUE);
     }
 
     @Override
     public void asMouseUp() {
         click=false;
+    }
+
+    @Override
+    public BufferedImage getSprite() {
+        BufferedImage I = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = I.createGraphics();
+        if (mouseover&&!click){
+            g.setColor(new Color(0, 150, 255));
+        }else if (mouseover&&click){
+            g.setColor(Color.CYAN);
+        }else {
+            g.setColor(Color.BLUE);
+        }
+        g.fillRect(0,0, getSize().getWidth(), getSize().getHeight());
+        g.setColor(Color.BLACK);
+        g.drawString("Test button go BRRR", 0,0);
+        g.dispose();
+        return I;
     }
 }

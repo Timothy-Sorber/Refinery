@@ -10,20 +10,12 @@ import java.awt.image.BufferedImage;
 public abstract class UI {
     protected Size size;
     protected Position position,labelpos;
-    protected Color color,labelcolor;
-    protected String name;
-    protected String label;
-    protected Input input;
     protected Boolean visible;
 
-    public UI(String name){
+    public UI(){
         //Default settings for a UI element
         size = new Size(200,50);
         position = new Position(0,0);
-        color = new Color(100,100,255);
-        label = "Unlabeled";
-        labelpos = new Position(0,0);
-        labelcolor = new Color(0,0,0);
         visible = true;
     }
 
@@ -31,17 +23,7 @@ public abstract class UI {
     public abstract void asMouseDown();
     public abstract void asMouseAway();
     public abstract void asMouseUp();
-
-    public BufferedImage getSprite(){
-        BufferedImage i = new BufferedImage(size.getWidth(), size.getHeight(), BufferedImage.TYPE_INT_RGB);
-        Graphics2D g = i.createGraphics();
-        g.setColor(color);
-        g.fillRect(0,0,size.getWidth(),size.getHeight());
-        g.setColor(labelcolor);
-        g.drawString(label, labelpos.getX(), labelpos.getY());
-        g.dispose();
-        return i;
-    }
+    public abstract BufferedImage getSprite();
 
     public Size getSize() {
         return size;
@@ -58,43 +40,6 @@ public abstract class UI {
     public void setPosition(Position position) {
         this.position = position;
     }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public Position getLabelpos() {
-        return labelpos;
-    }
-
-    public void setLabelpos(Position labelpos) {
-        this.labelpos = labelpos;
-    }
-
-    public Color getLabelcolor() {
-        return labelcolor;
-    }
-
-    public void setLabelcolor(Color labelcolor) {
-        this.labelcolor = labelcolor;
-    }
-
     public Boolean Visible() {
         return visible;
     }

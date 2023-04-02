@@ -13,6 +13,7 @@ import org.refinery.Util.util;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 public class Window extends JFrame {
     private Canvas c;
@@ -62,8 +63,8 @@ public class Window extends JFrame {
             ground = GR.get(i);
             g.drawImage(
                     ground.getSprite(),
-                    ground.getPosition().getX(),
-                    ground.getPosition().getY(),
+                    ground.getPosition().getX()*100,
+                    ground.getPosition().getY()*100,
                     null
             );
         }

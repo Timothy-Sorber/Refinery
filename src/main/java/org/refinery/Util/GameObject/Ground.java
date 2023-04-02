@@ -8,8 +8,7 @@ public abstract class Ground {
     protected Position position;
 
     public Ground(Position position){
-        this.position = position;
-        SNAP(this.position);
+        this.position = snap(position);
     }
 
     public abstract BufferedImage getSprite();
@@ -19,11 +18,12 @@ public abstract class Ground {
     }
 
     public void setPosition(Position position) {
-        this.position = position;
+        this.position = snap(position);
     }
 
-    private void SNAP(Position pos){
+    private Position snap(Position pos){
         pos.setY(pos.getY()*100);
         pos.setX(pos.getX()*100);
+        return pos;
     }
 }
