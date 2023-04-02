@@ -1,10 +1,12 @@
 package org.refinery.game;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.GameObject.Ground;
+import org.refinery.Util.GameObject.Machine;
 import org.refinery.Util.GameObject.UI.UI;
 import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.List.GRlist;
+import org.refinery.Util.List.MAlist;
 import org.refinery.Util.List.UIlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
@@ -56,6 +58,7 @@ public class Window extends JFrame {
         GOlist gameobjects = game.getGameObjects();
         UIlist UI = game.getUI();
         GRlist GR = game.getGround();
+        MAlist MA = game.getMachines();
 
         //render Ground
         Ground ground;
@@ -67,6 +70,19 @@ public class Window extends JFrame {
                     ground.getPosition().getY()*100,
                     null
             );
+        }
+
+        //render Machines
+        Machine machine;
+        for (int i=0; i<MA.size(); i++){
+            machine = MA.get(i);
+            g.drawImage(
+                    machine.getSprite(),
+                    machine.getPosition().getX()*100,
+                    machine.getPosition().getY()*100,
+                    null
+            );
+            System.out.println("X:" + machine.getPosition().getX()*100 + " Y:" + machine.getPosition().getY()*100);
         }
 
         //render GameObjects

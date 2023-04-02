@@ -2,6 +2,7 @@ package org.refinery.game;
 
 import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
+import org.refinery.Machines.TestMachine;
 import org.refinery.Objects.Player;
 import org.refinery.Objects.TestParticle;
 import org.refinery.Util.*;
@@ -30,6 +31,7 @@ public class Game {
     private GOlist GOlist;
     private UIlist UIlist;
     private GRlist GRlist;
+    private MAlist MAlist;
     private Input input = new Input();
     private Input playerinput = new Input();
     private util u = new util();
@@ -44,9 +46,11 @@ public class Game {
         GOlist = new GOlist();
         UIlist = new UIlist();
         GRlist = new GRlist();
+        MAlist = new MAlist();
         GOlist.add(new Player());
         UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
+        MAlist.add(new TestMachine(new Position(8,4)));
         int layers = 10;
         int tpl = 20;
         for(int i = 0; i < layers; i++){
@@ -155,5 +159,8 @@ public class Game {
     }
     public Window Window() {
         return w;
+    }
+    public MAlist getMachines(){
+        return MAlist;
     }
 }

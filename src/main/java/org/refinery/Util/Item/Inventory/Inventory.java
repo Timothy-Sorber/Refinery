@@ -34,4 +34,9 @@ public class Inventory {
             contents.remove(index);
         }
     }
+    public void setItem(int index, Item item){
+        if (index <= contents.size()){
+            contents.set(index, item);
+        }
+    }
 }
