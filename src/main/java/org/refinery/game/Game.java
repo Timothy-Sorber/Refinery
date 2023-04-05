@@ -22,6 +22,7 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Random;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -32,14 +33,14 @@ public class Game {
     private UIlist UIlist;
     private GRlist GRlist;
     private MAlist MAlist;
-    private Input input = new Input();
-    private Input playerinput = new Input();
+    private Input input;
     private util u = new util();
     public int fps,ups;
     public Inventory testinv;
     public Inventoryviewer testinvviewer;
 
     public Game(int width, int height){
+        input = new Input();
         input.clearMouseClick();
         w = new Window(width, height, input);
         GameObjects = new ArrayList<>();
@@ -47,21 +48,14 @@ public class Game {
         UIlist = new UIlist();
         GRlist = new GRlist();
         MAlist = new MAlist();
-        GOlist.add(new Player());
-        UIlist.add(new Button(GOlist, this));
+        GOlist.add(new Player(input));
+        //UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
         MAlist.add(new TestMachine(new Position(8,4)));
-        int layers = 10;
-        int tpl = 20;
-        for(int i = 0; i < layers; i++){
-            for(int j = 0; j<tpl; j++){
-                GRlist.add(new Grass(new Position(j,i)));
-            }
-        }
+        generateRandomTerrain(10,20, GRlist);
         for (int i = 0; i<10; i++){
             GOlist.add(new TestParticle());
         }
-        firstload();
     }
 
     /*
@@ -135,6 +129,9 @@ public class Game {
         }
         fps = FPS;
         ups = UPS;
+        if (input.ispressed(87)){
+            System.out.println("W pressed");
+        }
     }
 
     public void render(){
@@ -162,5 +159,18 @@ public class Game {
     }
     public MAlist getMachines(){
         return MAlist;
+    }
+    private void generateRandomTerrain(int rows, int rowsize, GRlist ground) {
+        Random rand = new Random();
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j<rowsize; j++){
+                int ri = rand.nextInt(2);
+                if (ri==0){
+                    ground.add(new Grass(new Position(j,i)));
+                }else{
+                    ground.add(new TestGround(new Position(j,i)));
+                }
+            }
+        }
     }
 }

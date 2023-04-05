@@ -29,6 +29,7 @@ public class Window extends JFrame {
         setVisible(true);
         setTitle("Refinery test window");
         setExtendedState(MAXIMIZED_BOTH);
+        setFocusable(false);
         realitivex = 0;
         realitivey = 0;
         this.input = input;
@@ -82,7 +83,6 @@ public class Window extends JFrame {
                     machine.getPosition().getY()*100,
                     null
             );
-            System.out.println("X:" + machine.getPosition().getX()*100 + " Y:" + machine.getPosition().getY()*100);
         }
 
         //render GameObjects

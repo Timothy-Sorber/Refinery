@@ -15,12 +15,11 @@ public class Player extends GameObject {
     private Input input;
     public Color color;
     private util util = new util();
-    public Player(){
+    public Player(Input input){
         super("Player");
         setPosition(new Position(100,100));
         setSize(new Size(50,50));
-        this.input = new Input();
-        color = new Color(0,0,255);
+        this.input = input;
     }
 
     @Override
@@ -50,7 +49,7 @@ public class Player extends GameObject {
     public Image getSprite() {
         BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = i.createGraphics();
-        g.setColor(Color.GREEN);
+        g.setColor(Color.RED);
         g.fillRect(0, 0, i.getWidth()/4, i.getHeight()/4);
         g.fillRect(i.getWidth()-(i.getWidth()/4), 0, i.getWidth(), i.getHeight()/4);
         g.fillRect(0, i.getHeight()-(i.getHeight()/4), i.getWidth(), i.getHeight());

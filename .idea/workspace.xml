@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Fixed ground rendering and optimized it for maximum FPS">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Machines/TestMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/GameObject/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/List/MAlist.java" afterDir="false" />
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Added machines.">
+      <change afterPath="$PROJECT_DIR$/game/Textures/grass.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Item/Inventory/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Item/Inventory/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modding/refinery.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Modding/refinery.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Ground/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Ground/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Objects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Window.java" afterDir="false" />
     </list>
@@ -73,6 +74,8 @@
       <recent name="C:\Users\Timothy\Downloads\refinery\Modding" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources" />
+      <recent name="C:\Users\Timothy\Downloads\refinery\game" />
       <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources\Images" />
     </key>
   </component>
@@ -253,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680393970407</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added machines.">
+      <created>1680446840805</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680446840805</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,6 +298,17 @@
     <MESSAGE value="Full list of changes:&#10;1. Added grounds, they render behind everything and can be made be extending the &quot;Ground&quot; class&#10;2. Rather than using &quot;TYPE_INT_RGB&quot; (which makes it so the image isn't transparent) I switched to ARGB which makes the images transparent.&#10;&#10;The input is still bugged and I have no idea what to do." />
     <MESSAGE value="Modding is underway!&#10;&#10;you can get started by reading the ReadMe in 'Modding/ReadMe.txt'&#10;&#10;this won't work for a bit but you can set it up for later." />
     <MESSAGE value="Fixed ground rendering and optimized it for maximum FPS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed ground rendering and optimized it for maximum FPS" />
+    <MESSAGE value="Added machines." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added machines." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
