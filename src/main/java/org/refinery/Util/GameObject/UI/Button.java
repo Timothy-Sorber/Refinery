@@ -60,7 +60,7 @@ public class Button extends UI{
         }
         g.fillRect(0,0, getSize().getWidth(), getSize().getHeight());
         g.setColor(Color.BLACK);
-        g.drawString("Test button go BRRR", 0,0);
+        g.drawString("Test button go BRRR", 0,20);
         g.dispose();
         return I;
     }

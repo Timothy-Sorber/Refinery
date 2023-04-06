@@ -49,7 +49,7 @@ public class Game {
         GRlist = new GRlist();
         MAlist = new MAlist();
         GOlist.add(new Player(input));
-        //UIlist.add(new Button(GOlist, this));
+        UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
         MAlist.add(new TestMachine(new Position(8,4)));
         generateRandomTerrain(10,20, GRlist);

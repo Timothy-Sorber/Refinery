@@ -12,11 +12,13 @@ public abstract class Machine{
     protected Position position;
     protected Size size;
     protected Inventory inventory;
+    protected boolean Placed;
     public Machine(String name, Position position, Size size, int Invsize) {
         this.name = name;
         this.position = snap(position);
         this.size = size;
         inventory = new Inventory(name, Invsize);
+        Placed = false;
     }
 
     public abstract BufferedImage getSprite();
@@ -49,5 +51,17 @@ public abstract class Machine{
     }
     public Size getSize() {
         return size;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public boolean isPlaced() {
+        return Placed;
+    }
+
+    public void setPlaced(boolean placed) {
+        Placed = placed;
     }
 }

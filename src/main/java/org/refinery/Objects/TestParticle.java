@@ -15,6 +15,7 @@ public class TestParticle extends GameObject {
 
     private util util = new util();
     int rr,timealive;
+    private Color color = Color.BLUE;
 
     public TestParticle() {
         super("Particle");
@@ -27,7 +28,9 @@ public class TestParticle extends GameObject {
     public void update(int screenwidth, int screenheight, GOlist GameObjects, Game game) {
         timealive++;
         if (timealive>=60){
-            destroy();
+            color = Color.RED;
+        }else{
+            color = Color.BLUE;
         }
         int x = getPosition().getX();
         int y = getPosition().getY();
@@ -47,7 +50,7 @@ public class TestParticle extends GameObject {
     public Image getSprite() {
         BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = i.createGraphics();
-        g.setColor(Color.blue);
+        g.setColor(color);
         g.fillOval(0,0, i.getWidth(), i.getHeight());
         g.dispose();
         return i;

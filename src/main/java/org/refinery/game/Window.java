@@ -83,6 +83,12 @@ public class Window extends JFrame {
                     machine.getPosition().getY()*100,
                     null
             );
+            if (!machine.isPlaced()){
+                machine.setPosition(getMouseWorldPos());
+                if (input.getMouseClicked()){
+                    machine.setPlaced(true);
+                }
+            }
         }
 
         //render GameObjects
@@ -119,5 +125,12 @@ public class Window extends JFrame {
 
     public Position getPosition() {
         return new Position(realitivex, realitivey);
+    }
+
+    public Position getMouseWorldPos(){
+        Position pos = new Position(input.getPointerPosition().getX(),input.getPointerPosition().getY());
+        pos.setX(Math.round(pos.getX()/100));
+        pos.setY(Math.round(pos.getY()/100));
+        return pos;
     }
 }
