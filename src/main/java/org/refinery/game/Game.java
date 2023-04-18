@@ -4,7 +4,6 @@ import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
 import org.refinery.Machines.TestMachine;
 import org.refinery.Objects.Player;
-import org.refinery.Objects.TestParticle;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.GameObject.UI.*;
@@ -40,6 +39,7 @@ public class Game {
     public Inventoryviewer testinvviewer;
 
     public Game(int width, int height){
+        System.out.println("Hello World!");
         input = new Input();
         input.clearMouseClick();
         w = new Window(width, height, input);
@@ -51,15 +51,25 @@ public class Game {
         GOlist.add(new Player(input));
         UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
+        testinvviewer = new Inventoryviewer(testinv, this);
+        UIlist.add(testinvviewer);
         MAlist.add(new TestMachine(new Position(8,4)));
         generateRandomTerrain(10,20, GRlist);
-        for (int i = 0; i<10; i++){
-            GOlist.add(new TestParticle());
-        }
     }
 
-    /*
-    public void findandrunmods() throws ClassNotFoundException {
+
+    public void findandrunmods(){
+        //Creating a File object for directory
+        File directoryPath = new File("./game/mods");
+        //List of all files and directories
+        String contents[] = directoryPath.list();
+        System.out.println("List of Mods:");
+        for(int i=0; i<contents.length; i++) {
+            if (contents[i].endsWith(".jar")) {
+                System.out.println(contents[i]);
+            }
+        }
+        /*
         JarFile jarFile = new JarFile(pathToJar);
         Enumeration<JarEntry> e = jarFile.entries();
 
@@ -77,8 +87,9 @@ public class Game {
             Class c = cl.loadClass(className);
 
         }
+        */
     }
-    */
+
 
     public void firstload(){
         try {
@@ -129,9 +140,6 @@ public class Game {
         }
         fps = FPS;
         ups = UPS;
-        if (input.ispressed(87)){
-            System.out.println("W pressed");
-        }
     }
 
     public void render(){

@@ -2,7 +2,7 @@ package org.refinery.Util.GameObject.UI;
 
 import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
-import org.refinery.Objects.TestParticle;
+import org.refinery.Machines.TestMachine;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
@@ -32,8 +32,9 @@ public class Button extends UI{
 
     @Override
     public void asMouseDown() {
-        if (mouseover){
-            game.getGameObjects().add(new TestParticle());
+        if (mouseover&&!click){
+            click=true;
+            game.getMachines().add(new TestMachine(new Position(0,0)));
         }
     }
 

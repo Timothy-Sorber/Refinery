@@ -1,4 +1,5 @@
 package org.refinery.game;
+import org.refinery.Machines.TestMachine;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.GameObject.Ground;
 import org.refinery.Util.GameObject.Machine;
@@ -24,10 +25,11 @@ public class Window extends JFrame {
     private util util = new util();
     public int realitivex, realitivey;
     public Input input;
+    public boolean clicked;
     public Window(int width, int height, Input input){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setTitle("Refinery test window");
+        setTitle("Refinery V-0.0.1");
         setExtendedState(MAXIMIZED_BOTH);
         setFocusable(false);
         realitivex = 0;
@@ -61,6 +63,12 @@ public class Window extends JFrame {
         GRlist GR = game.getGround();
         MAlist MA = game.getMachines();
 
+        if (input.getMouseClicked()){
+            clicked = true;
+        }else{
+            clicked = false;
+        }
+
         //render Ground
         Ground ground;
         for (int i=0; i < GR.size(); i++){
@@ -85,7 +93,7 @@ public class Window extends JFrame {
             );
             if (!machine.isPlaced()){
                 machine.setPosition(getMouseWorldPos());
-                if (input.getMouseClicked()){
+                if (input.getMouseClicked()&&!clicked){
                     machine.setPlaced(true);
                 }
             }

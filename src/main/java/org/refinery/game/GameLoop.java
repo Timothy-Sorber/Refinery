@@ -31,18 +31,6 @@ public class GameLoop implements Runnable {
                 }
                 render();
             }
-            updateStats();
-        }
-    }
-
-    private void updateStats() {
-        if (System.currentTimeMillis() > nextStatTime) {
-            System.out.println("Fps: " + fps + " Ups: " + ups);
-            FPSOUT = fps;
-            UPSOUT = ups;
-            fps = 0;
-            ups = 0;
-            nextStatTime = System.currentTimeMillis() + 1000;
         }
     }
 

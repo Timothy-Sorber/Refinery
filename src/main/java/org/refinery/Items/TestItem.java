@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class TestItem extends Item {
     public TestItem(int amount) {
-        super("test item", amount, 30);
+        super("test item", amount, 32);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class TestItem extends Item {
         Graphics2D g = image.createGraphics();
         g.setColor(Color.yellow);
         g.fillRect(0,0,10,10);
-        return null;
+        return image;
     }
 
     @Override
