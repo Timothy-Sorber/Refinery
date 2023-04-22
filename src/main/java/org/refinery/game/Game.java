@@ -17,6 +17,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -42,8 +43,7 @@ public class Game {
     public Inventoryviewer testinvviewer;
     public ArrayList<mod> Mods = new ArrayList<mod>();
 
-    public Game(int width, int height){
-        System.out.println("Hello World!");
+    public Game(int width, int height) throws IOException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         input = new Input();
         input.clearMouseClick();
         w = new Window(width, height, input);
@@ -56,13 +56,14 @@ public class Game {
         UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
         testinvviewer = new Inventoryviewer(testinv, this);
-        UIlist.add(testinvviewer);
+        //UIlist.add(testinvviewer);
         MAlist.add(new TestMachine(new Position(8,4)));
-        generateRandomTerrain(100,50, GRlist);
+        generateRandomTerrain(20,20, GRlist);
+        findandrunmods();
     }
 
 
-    public void findandrunmods() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void findandrunmods() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         System.out.println("Loading mods...");
         //Creating a File object for directory
         File directoryPath = new File("./game/mods");
@@ -72,10 +73,10 @@ public class Game {
         for(int i=0; i<contents.length; i++) {
             if (contents[i].endsWith(".jar")) {
                 System.out.println(contents[i]);
-                JarFile jarFile = new JarFile(".game/mods/"+contents[i]);
+                JarFile jarFile = new JarFile("game/mods/"+contents[i]);
                 Enumeration<JarEntry> e = jarFile.entries();
 
-                URL[] urls = { new URL("jar:file:" + ".game/mods/"+contents[i]+"!/") };
+                URL[] urls = { new URL("jar:file:" + "game/mods/"+contents[i]+"!/") };
                 URLClassLoader cl = URLClassLoader.newInstance(urls);
 
                 while (e.hasMoreElements()) {
@@ -88,9 +89,12 @@ public class Game {
                     className = className.replace('/', '.');
                     if (className.endsWith("Main")) {
                         Class c = cl.loadClass(className);
-                        Method Method;
-                        Method=c.getMethod("onEnable");
-
+                        Class<?> clazz = c;
+                        Constructor<?> ctor = clazz.getConstructor();
+                        Object instance = ctor.newInstance();
+                        Method modinnit = clazz.getMethod("onEnable", Game.class);
+                        modinnit.invoke(instance, this);
+                        System.out.println("Loaded " + contents[i].replace(".jar", "") + " without errors!");
                     }
                 }
             }

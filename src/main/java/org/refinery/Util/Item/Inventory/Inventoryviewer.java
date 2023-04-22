@@ -52,12 +52,6 @@ public class Inventoryviewer extends UI {
         g.fillRect(0,0,image.getWidth()-10, image.getHeight()-10);
         g.setColor(Color.GRAY);
         g.fillRect(10,10, image.getWidth()-20, image.getHeight()-20);
-        for (int i=0; i<Math.round(inv.size); i++){
-            Item item = inv.get(i);
-            if (item!=null){
-
-            }
-        }
 
         return image;
     }

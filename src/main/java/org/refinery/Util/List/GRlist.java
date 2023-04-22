@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class GRlist {
     public static ArrayList<Ground> List;
     public GRlist(){
-        List = new ArrayList<Ground>();
+        List = new ArrayList<>();
     }
 
     public static void add(Ground element){
