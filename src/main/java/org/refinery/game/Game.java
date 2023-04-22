@@ -3,6 +3,7 @@ package org.refinery.game;
 import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
 import org.refinery.Machines.TestMachine;
+import org.refinery.Modding.mod;
 import org.refinery.Objects.Player;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
@@ -16,6 +17,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -37,6 +40,7 @@ public class Game {
     public int fps,ups;
     public Inventory testinv;
     public Inventoryviewer testinvviewer;
+    public ArrayList<mod> Mods = new ArrayList<mod>();
 
     public Game(int width, int height){
         System.out.println("Hello World!");
@@ -58,7 +62,8 @@ public class Game {
     }
 
 
-    public void findandrunmods(){
+    public void findandrunmods() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        System.out.println("Loading mods...");
         //Creating a File object for directory
         File directoryPath = new File("./game/mods");
         //List of all files and directories
@@ -67,27 +72,29 @@ public class Game {
         for(int i=0; i<contents.length; i++) {
             if (contents[i].endsWith(".jar")) {
                 System.out.println(contents[i]);
+                JarFile jarFile = new JarFile(".game/mods/"+contents[i]);
+                Enumeration<JarEntry> e = jarFile.entries();
+
+                URL[] urls = { new URL("jar:file:" + ".game/mods/"+contents[i]+"!/") };
+                URLClassLoader cl = URLClassLoader.newInstance(urls);
+
+                while (e.hasMoreElements()) {
+                    JarEntry je = e.nextElement();
+                    if(je.isDirectory() || !je.getName().endsWith(".class")){
+                        continue;
+                    }
+                    // -6 because of .class
+                    String className = je.getName().substring(0,je.getName().length()-6);
+                    className = className.replace('/', '.');
+                    if (className.endsWith("Main")) {
+                        Class c = cl.loadClass(className);
+                        Method Method;
+                        Method=c.getMethod("onEnable");
+
+                    }
+                }
             }
         }
-        /*
-        JarFile jarFile = new JarFile(pathToJar);
-        Enumeration<JarEntry> e = jarFile.entries();
-
-        URL[] urls = { new URL("jar:file:" + pathToJar+"!/") };
-        URLClassLoader cl = URLClassLoader.newInstance(urls);
-
-        while (e.hasMoreElements()) {
-            JarEntry je = e.nextElement();
-            if(je.isDirectory() || !je.getName().endsWith(".class")){
-                continue;
-            }
-            // -6 because of .class
-            String className = je.getName().substring(0,je.getName().length()-6);
-            className = className.replace('/', '.');
-            Class c = cl.loadClass(className);
-
-        }
-        */
     }
 
 
