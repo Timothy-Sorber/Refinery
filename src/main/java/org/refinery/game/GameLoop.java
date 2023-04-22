@@ -19,6 +19,7 @@ public class GameLoop implements Runnable {
         long currentTime, lastUpdate = System.currentTimeMillis();
         nextStatTime = System.currentTimeMillis() + 1000;
         while (running) {
+            stats();
             currentTime = System.currentTimeMillis();
             double lastRenderTime = (currentTime - lastUpdate) / 1000d;
             accumulator += lastRenderTime;
@@ -31,6 +32,16 @@ public class GameLoop implements Runnable {
                 }
                 render();
             }
+        }
+    }
+
+    private void stats(){
+        if (nextStatTime==System.currentTimeMillis()){
+            FPSOUT=fps;
+            UPSOUT=ups;
+            fps=0;
+            ups=0;
+            nextStatTime = System.currentTimeMillis()+1000;
         }
     }
 

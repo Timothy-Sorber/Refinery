@@ -54,7 +54,7 @@ public class Game {
         testinvviewer = new Inventoryviewer(testinv, this);
         UIlist.add(testinvviewer);
         MAlist.add(new TestMachine(new Position(8,4)));
-        generateRandomTerrain(10,20, GRlist);
+        generateRandomTerrain(100,50, GRlist);
     }
 
 

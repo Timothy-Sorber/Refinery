@@ -1,6 +1,7 @@
 package org.refinery.Util.Item.Inventory;
 
 import org.refinery.Util.GameObject.UI.UI;
+import org.refinery.Util.Item.Item;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.game.Game;
@@ -10,10 +11,12 @@ import java.awt.image.BufferedImage;
 
 public class Inventoryviewer extends UI {
     private Game game;
+    private Inventory inv;
     public Inventoryviewer(Inventory inventory, Game game) {
         setVisible(true);
         setSize(new Size(800,800));
         this.game = game;
+        inv=inventory;
     }
     @Override
     public void asMouseOver() {
@@ -43,10 +46,19 @@ public class Inventoryviewer extends UI {
                 (game.getW().getWidth()/2)-getSize().getWidth()/2,
                 (game.getW().getHeight()/2)-getSize().getHeight()/2
         ));
-        g.setColor(Color.GRAY);
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 0, image.getWidth(), image.getHeight());
         g.setColor(Color.lightGray);
-        g.drawRect(0,0, image.getWidth(), image.getHeight());
+        g.fillRect(0,0,image.getWidth()-10, image.getHeight()-10);
+        g.setColor(Color.GRAY);
+        g.fillRect(10,10, image.getWidth()-20, image.getHeight()-20);
+        for (int i=0; i<Math.round(inv.size); i++){
+            Item item = inv.get(i);
+            if (item!=null){
+
+            }
+        }
+
         return image;
     }
 }
