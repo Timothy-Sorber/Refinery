@@ -15,10 +15,7 @@ import org.refinery.Util.Item.Inventory.Inventoryviewer;
 import org.refinery.Util.List.*;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -41,8 +38,7 @@ public class Game {
     public int fps,ups;
     public Inventory testinv;
     public Inventoryviewer testinvviewer;
-    public ArrayList<mod> Mods = new ArrayList<mod>();
-    public File gameData = new File("game/GameData.txt");
+    public ArrayList<Class> Mods = new ArrayList<Class>();
 
     public Game(int width, int height) throws IOException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         input = new Input();
@@ -59,20 +55,18 @@ public class Game {
         testinvviewer = new Inventoryviewer(testinv, this);
         //UIlist.add(testinvviewer);
         MAlist.add(new TestMachine(new Position(8,4)));
-        generateRandomTerrain(20,20, GRlist);
+        generateRandomTerrain(20,20,GRlist);
         findandrunmods();
     }
 
 
     public void findandrunmods() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         System.out.println("Loading mods...");
-        //Creating a File object for directory
         File directoryPath = new File("./game/mods");
-        //List of all files and directories
         String contents[] = directoryPath.list();
         System.out.println("List of Mods:");
         for(int i=0; i<contents.length; i++) {
-            if (contents[i].endsWith(".jar")) {
+            if (contents[i].endsWith(".jar")&&!contents[i].startsWith("[Disabled]")) {
                 System.out.println(contents[i]);
                 JarFile jarFile = new JarFile("game/mods/"+contents[i]);
                 Enumeration<JarEntry> e = jarFile.entries();
@@ -85,38 +79,31 @@ public class Game {
                     if(je.isDirectory() || !je.getName().endsWith(".class")){
                         continue;
                     }
-                    // -6 because of .class
                     String className = je.getName().substring(0,je.getName().length()-6);
                     className = className.replace('/', '.');
-                    if (className.endsWith("Main")) {
+                    if (className.endsWith(contents[i].replace(".jar", ""))) {
                         Class c = cl.loadClass(className);
-                        Class<?> clazz = c;
-                        Constructor<?> ctor = clazz.getConstructor();
-                        Object instance = ctor.newInstance();
-                        Method modinnit = clazz.getMethod("onEnable", Game.class);
-                        modinnit.invoke(instance, this);
-                        System.out.println("Loaded " + contents[i].replace(".jar", "") + " without errors!");
+                        Mods.add(c);
                     }
                 }
             }
         }
-    }
-
-    public boolean getModState(String modname){
-        boolean state = false;
-        try {
-            Scanner scanner = new Scanner(gameData);
-            while (scanner.hasNextLine()) {
-                if (scanner.nextLine() == "(Disabled)" + modname) {
-                    state = false;
-                }
+        if (Mods.isEmpty()) {
+            System.out.println("No mods found, Skipping mod loading.");
+        }else{
+            String modname;
+            for (int i=0; i< Mods.size(); i++){
+                Class c = Mods.get(i);
+                Class<?> clazz = c;
+                Constructor<?> ctor = clazz.getConstructor();
+                Object instance = ctor.newInstance();
+                Method modinnit = clazz.getMethod("onEnable", Game.class);
+                modinnit.invoke(instance, this);
+                modname = c.getName().substring(4,c.getName().length());
+                modname = modname.substring(((modname.length()-1)/2)+1,modname.length());
+                System.out.println("Loaded '" + modname + "' without errors!");
             }
-            state = true;
-        }catch (FileNotFoundException e){
-            System.out.println("An error occurred while loading mod '"+modname+"'.");
-            System.exit(1);
         }
-        return state;
     }
 
     public void update(int FPS, int UPS){
