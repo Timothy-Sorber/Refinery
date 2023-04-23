@@ -1,0 +1,2 @@
+This is the gameData file! Please do not edit!
+(Disabled)testmod.jar

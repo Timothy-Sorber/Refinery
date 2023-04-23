@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Modding now works!">
+    <list default="true" id="d4b124db-3dd1-4ad9-9c73-e57f152f4ca5" name="Changes" comment="Updated the Modding ReadMe.">
+      <change afterPath="$PROJECT_DIR$/game/GameData.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/mods/testmod.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modding/ReadMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modding/ReadMe.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modding/refinery.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Modding/refinery.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/mods/testmod.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/Util/util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,7 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-19.0.2/lib/src.zip!/java.base/java/io/File.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/refinery/game/Game.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MacroExpansionManager">
@@ -42,7 +45,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2L13hQfolN93HQOC8YUJ5dLONRu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -55,11 +58,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path": "C:\\Users\\Timothy\\Downloads\\refinery\\",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Timothy/Downloads/refinery/Modding",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/Users/Timothy/Documents/JSON/JSON-java",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
@@ -73,13 +81,51 @@
       <recent name="C:\Users\Timothy\Downloads\refinery\game\mods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources" />
       <recent name="C:\Users\Timothy\Downloads\refinery\game" />
+      <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources" />
       <recent name="C:\Users\Timothy\Downloads\refinery\src\main\resources\Images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.refinery.Util.List" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.Run">
+    <configuration name="Run" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.refinery.Launcher" />
+      <module name="refinery" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Run" />
+      <item itemvalue="Maven.Build" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -307,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682191947916</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Updated the Modding ReadMe.">
+      <created>1682195549035</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1682195549035</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,7 +376,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="basic 3x+1 thingy to test my basic knowledge of java" />
     <MESSAGE value="added a window to show what the script is doing" />
     <MESSAGE value="Removed the 3x+1 thing and made a basic gameloop for the future" />
     <MESSAGE value="Got the basics of drawing and GameObjects done." />
@@ -348,7 +400,8 @@
     <MESSAGE value="Few changes" />
     <MESSAGE value="Working on modding" />
     <MESSAGE value="Modding now works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modding now works!" />
+    <MESSAGE value="Updated the Modding ReadMe." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the Modding ReadMe." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

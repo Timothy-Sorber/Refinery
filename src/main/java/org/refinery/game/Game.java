@@ -1,5 +1,6 @@
 package org.refinery.game;
 
+import org.json.JSONObject;
 import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
 import org.refinery.Machines.TestMachine;
@@ -15,6 +16,7 @@ import org.refinery.Util.List.*;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -22,10 +24,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.ArrayList;
-import java.util.Enumeration;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -42,6 +42,7 @@ public class Game {
     public Inventory testinv;
     public Inventoryviewer testinvviewer;
     public ArrayList<mod> Mods = new ArrayList<mod>();
+    public File gameData = new File("game/GameData.txt");
 
     public Game(int width, int height) throws IOException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         input = new Input();
@@ -101,22 +102,21 @@ public class Game {
         }
     }
 
-
-    public void firstload(){
+    public boolean getModState(String modname){
+        boolean state = false;
         try {
-            File modsf = new File("./game/mods");
-            if (!modsf.exists()) {
-                modsf.mkdirs();
-                File readme = new File("./game/mods/readme.txt");
-                readme.createNewFile();
-                readme.setWritable(true);
-                FileWriter Writer = new FileWriter("./game/mods/readme.txt");
-                Writer.write("Yes, this will have mod support. Please go to https://github.com/Timothy-Sorber/Refinery/tree/master/Modding for more information");
-                Writer.close();
+            Scanner scanner = new Scanner(gameData);
+            while (scanner.hasNextLine()) {
+                if (scanner.nextLine() == "(Disabled)" + modname) {
+                    state = false;
+                }
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            state = true;
+        }catch (FileNotFoundException e){
+            System.out.println("An error occurred while loading mod '"+modname+"'.");
+            System.exit(1);
         }
+        return state;
     }
 
     public void update(int FPS, int UPS){
