@@ -9,7 +9,7 @@ Using entirely java and my sheer will power, I will eventually complete this gam
 # Planned features
 
 <ul>
-  <li>Modding
+  <li>Modding - Completed
   <li>Enemies
   <li>Teams
   <li>Research
