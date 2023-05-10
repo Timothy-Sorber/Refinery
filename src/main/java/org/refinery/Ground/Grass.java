@@ -16,14 +16,14 @@ public class Grass extends Ground {
 
     @Override
     public BufferedImage getSprite() {
-        BufferedImage image = new BufferedImage(100,100,BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
 
         g.setColor(Color.green);
         g.fillRect(0,0,image.getWidth(),image.getHeight());
 
         g.setColor(Color.BLACK);
-        g.drawRect(0,0,100,100);
+        g.drawRect(0,0,50,50);
         return image;
     }
 }

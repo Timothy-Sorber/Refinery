@@ -1,30 +1,32 @@
 package org.refinery.game;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 import org.refinery.Ground.Grass;
 import org.refinery.Ground.TestGround;
 import org.refinery.Machines.TestMachine;
-import org.refinery.Modding.mod;
-import org.refinery.Objects.Player;
+import org.refinery.Objects.*;
 import org.refinery.Util.*;
 import org.refinery.Util.GameObject.GameObject;
-import org.refinery.Util.GameObject.UI.*;
-import org.refinery.Util.GameObject.UI.Button;
+import org.refinery.Util.GameObject.Ground;
+import org.refinery.Util.GameObject.Machine;
+import org.refinery.Util.GameObject.UI;
 import org.refinery.Util.Item.Inventory.Inventory;
 import org.refinery.Util.Item.Inventory.Inventoryviewer;
 import org.refinery.Util.List.*;
+import org.refinery.UI.*;
 
-import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import org.json.JSONObject;
 
 public class Game {
     private Window w;
@@ -33,23 +35,26 @@ public class Game {
     private UIlist UIlist;
     private GRlist GRlist;
     private MAlist MAlist;
-    private Input input;
+    private Input input, pinput;
     private util u = new util();
     public int fps,ups;
     public Inventory testinv;
     public Inventoryviewer testinvviewer;
-    public ArrayList<Class> Mods = new ArrayList<Class>();
+    public ArrayList<Class> Mods = new ArrayList<>();
+    public ArrayList<Machine> Machines = new ArrayList<>();
+    public JSONObject loadedmoddata = new JSONObject();
 
     public Game(int width, int height) throws IOException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         input = new Input();
         input.clearMouseClick();
-        w = new Window(width, height, input);
+        pinput = new Input();
+        w = new Window(width, height, input, pinput);
         GameObjects = new ArrayList<>();
         GOlist = new GOlist();
         UIlist = new UIlist();
         GRlist = new GRlist();
         MAlist = new MAlist();
-        GOlist.add(new Player(input));
+        GOlist.add(new Player(pinput));
         UIlist.add(new Button(GOlist, this));
         testinv = new Inventory("test inventory", 5);
         testinvviewer = new Inventoryviewer(testinv, this);
@@ -61,35 +66,43 @@ public class Game {
 
 
     public void findandrunmods() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+        String moddatastring = new FileUtils("./game/mods/disabledmods.json").toString();
+        JSONArray disabledmods = new JSONArray(moddatastring);
         System.out.println("Loading mods...");
         File directoryPath = new File("./game/mods");
         String contents[] = directoryPath.list();
         System.out.println("List of Mods:");
         for(int i=0; i<contents.length; i++) {
-            if (contents[i].endsWith(".jar")&&!contents[i].startsWith("[Disabled]")) {
-                System.out.println(contents[i]);
-                JarFile jarFile = new JarFile("game/mods/"+contents[i]);
-                Enumeration<JarEntry> e = jarFile.entries();
+            String name = contents[i].substring(0, contents[i].lastIndexOf("."));
+            if (contents[i].endsWith(".jar")) {
+                if (!disabledmods.toString().contains(name)) {
+                    System.out.println(name);
+                    JarFile jarFile = new JarFile("./game/mods/" + contents[i]);
+                    Enumeration<JarEntry> e = jarFile.entries();
 
-                URL[] urls = { new URL("jar:file:" + "game/mods/"+contents[i]+"!/") };
-                URLClassLoader cl = URLClassLoader.newInstance(urls);
+                    URL[] urls = {new URL("jar:file:" + "./game/mods/" + contents[i] + "!/")};
+                    URLClassLoader cl = URLClassLoader.newInstance(urls);
 
-                while (e.hasMoreElements()) {
-                    JarEntry je = e.nextElement();
-                    if(je.isDirectory() || !je.getName().endsWith(".class")){
-                        continue;
+                    while (e.hasMoreElements()) {
+                        JarEntry je = e.nextElement();
+                        if (je.isDirectory() || !je.getName().endsWith(".class")) {
+                            continue;
+                        }
+                        String className = je.getName().substring(0, je.getName().length() - 6);
+                        className = className.replace('/', '.');
+                        if (className.endsWith(contents[i].replace(".jar", ""))) {
+                            Class c = cl.loadClass(className);
+                            Mods.add(c);
+                            break;
+                        }
                     }
-                    String className = je.getName().substring(0,je.getName().length()-6);
-                    className = className.replace('/', '.');
-                    if (className.endsWith(contents[i].replace(".jar", ""))) {
-                        Class c = cl.loadClass(className);
-                        Mods.add(c);
-                    }
+                }else{
+                    System.out.println(name+" [Disabled]");
                 }
             }
         }
         if (Mods.isEmpty()) {
-            System.out.println("No mods found, Skipping mod loading.");
+            System.out.println("No enabled mods found.");
         }else{
             String modname;
             for (int i=0; i< Mods.size(); i++){
@@ -177,6 +190,12 @@ public class Game {
                     ground.add(new TestGround(new Position(j,i)));
                 }
             }
+        }
+    }
+
+    public class registry{
+        public void registerMachine(Machine machine){
+            Machines.add(machine);
         }
     }
 }

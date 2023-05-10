@@ -7,6 +7,7 @@ import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 import org.refinery.game.Game;
+import org.refinery.game.Window;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -17,7 +18,7 @@ public class Player extends GameObject {
     private util util = new util();
     public Player(Input input){
         super("Player");
-        setPosition(new Position(100,100));
+        setPosition(new Position(500,100));
         setSize(new Size(50,50));
         this.input = input;
     }
@@ -46,7 +47,7 @@ public class Player extends GameObject {
     }
 
     @Override
-    public Image getSprite() {
+    public BufferedImage getSprite() {
         BufferedImage i = new BufferedImage(getSize().getWidth(), getSize().getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = i.createGraphics();
         g.setColor(Color.RED);

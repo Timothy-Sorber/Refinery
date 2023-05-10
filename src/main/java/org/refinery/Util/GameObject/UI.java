@@ -1,4 +1,4 @@
-package org.refinery.Util.GameObject.UI;
+package org.refinery.Util.GameObject;
 
 import org.refinery.Util.Input;
 import org.refinery.Util.Position;

@@ -1,7 +1,6 @@
 package org.refinery.Util.List;
 
-import org.refinery.Util.GameObject.GameObject;
-import org.refinery.Util.GameObject.UI.UI;
+import org.refinery.Util.GameObject.UI;
 
 import java.util.ArrayList;
 

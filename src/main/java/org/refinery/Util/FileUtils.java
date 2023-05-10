@@ -1,62 +1,32 @@
 package org.refinery.Util;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
-
 
 public class FileUtils {
-
-    /**
-     * list files in the given directory and subdirs (with recursion)
-     * @param paths
-     * @return
-     */
-    public static List<File> getFiles(String paths) {
-        List<File> filesList = new ArrayList<File>();
-        for (final String path : paths.split(File.pathSeparator)) {
-            final File file = new File(path);
-            if( file.isDirectory()) {
-                recurse(filesList, file);
-            }
-            else {
-                filesList.add(file);
-            }
-        }
-        return filesList;
+    private File file;
+    public FileUtils(String filepath) {
+        file = new File(filepath);
     }
 
-    private static void recurse(List<File> filesList, File f) {
-        File list[] = f.listFiles();
-        for (File file : list) {
-            if (file.isDirectory()) {
-                recurse(filesList, file);
-            }
-            else {
-                filesList.add(file);
-            }
-        }
-    }
+    public String toString() {
+        String string = "";
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(file.getPath()));
+            String line = reader.readLine();
 
-    /**
-     * List the content of the given jar
-     * @param jarPath
-     * @return
-     * @throws IOException
-     */
-    public static List<String> getJarContent(String jarPath) throws IOException{
-        List<String> content = new ArrayList<String>();
-        JarFile jarFile = new JarFile(jarPath);
-        Enumeration<JarEntry> e = jarFile.entries();
-        while (e.hasMoreElements()) {
-            JarEntry entry = (JarEntry)e.nextElement();
-            String name = entry.getName();
-            content.add(name);
+            while (line != null) {
+                string+=line;
+                line = reader.readLine();
+            }
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return content;
+        return string;
     }
 }

@@ -11,33 +11,21 @@ public abstract class Machine{
     protected String name;
     protected Position position;
     protected Size size;
-    protected Inventory inventory;
     protected boolean Placed;
-    public Machine(String name, Position position, Size size, int Invsize) {
+    public Machine(String name, Position position, Size size) {
         this.name = name;
         this.position = snap(position);
         this.size = size;
-        inventory = new Inventory(name, Invsize);
-        Placed = false;
+        Placed = true;
     }
 
     public abstract BufferedImage getSprite();
     public abstract void update();
-
-    public Item getItem(int index) {
-        return inventory.get(index);
-    }
-    public void setItem(int index, Item item) {
-        inventory.setItem(index, item);
-    }
     public Position getPosition() {
-        return new Position(position.getX()/100, position.getY()/100);
+        return new Position(position.getX()/50, position.getY()/50);
     }
     public void setPosition(Position position){
         this.position = snap(position);
-    }
-    public Inventory getInventory() {
-        return inventory;
     }
 
     public String getName() {
@@ -45,18 +33,13 @@ public abstract class Machine{
     }
 
     private Position snap(Position pos){
-        pos.setX(pos.getX()*100);
-        pos.setY(pos.getY()*100);
+        pos.setX(pos.getX()*50);
+        pos.setY(pos.getY()*50);
         return pos;
     }
     public Size getSize() {
         return size;
     }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
-    }
-
     public boolean isPlaced() {
         return Placed;
     }

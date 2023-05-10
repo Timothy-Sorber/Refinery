@@ -1,22 +1,19 @@
 package org.refinery.game;
-import org.refinery.Machines.TestMachine;
 import org.refinery.Util.GameObject.GameObject;
 import org.refinery.Util.GameObject.Ground;
 import org.refinery.Util.GameObject.Machine;
-import org.refinery.Util.GameObject.UI.UI;
+import org.refinery.Util.GameObject.UI;
 import org.refinery.Util.Input;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.List.GRlist;
 import org.refinery.Util.List.MAlist;
 import org.refinery.Util.List.UIlist;
 import org.refinery.Util.Position;
-import org.refinery.Util.Size;
 import org.refinery.Util.util;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
 public class Window extends JFrame {
     private Canvas c;
@@ -26,7 +23,7 @@ public class Window extends JFrame {
     public int realitivex, realitivey;
     public Input input;
     public boolean clicked;
-    public Window(int width, int height, Input input){
+    public Window(int width, int height, Input input, Input pinput){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("Refinery V-0.0.1");
@@ -42,6 +39,7 @@ public class Window extends JFrame {
         c.addMouseMotionListener(input);
         add(c);
         addKeyListener(input);
+        addKeyListener(pinput);
         pack();
         c.createBufferStrategy(3);
     }
@@ -75,8 +73,8 @@ public class Window extends JFrame {
             ground = GR.get(i);
             g.drawImage(
                     ground.getSprite(),
-                    ground.getPosition().getX()*100,
-                    ground.getPosition().getY()*100,
+                    ground.getPosition().getX()*50,
+                    ground.getPosition().getY()*50,
                     null
             );
         }
@@ -87,8 +85,8 @@ public class Window extends JFrame {
             machine = MA.get(i);
             g.drawImage(
                     machine.getSprite(),
-                    machine.getPosition().getX()*100,
-                    machine.getPosition().getY()*100,
+                    machine.getPosition().getX()*50,
+                    machine.getPosition().getY()*50,
                     null
             );
             if (!machine.isPlaced()){

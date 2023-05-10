@@ -1,8 +1,7 @@
-package org.refinery.Util.GameObject.UI;
+package org.refinery.UI;
 
-import org.refinery.Ground.Grass;
-import org.refinery.Ground.TestGround;
 import org.refinery.Machines.TestMachine;
+import org.refinery.Util.GameObject.UI;
 import org.refinery.Util.List.GOlist;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
@@ -12,7 +11,7 @@ import org.refinery.game.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Button extends UI{
+public class Button extends UI {
     public Boolean mouseover;
     public Boolean click = false;
     public Game game;
@@ -32,7 +31,7 @@ public class Button extends UI{
 
     @Override
     public void asMouseDown() {
-        if (mouseover&&!click){
+        if (!click){
             click=true;
             game.getMachines().add(new TestMachine(new Position(0,0)));
         }
