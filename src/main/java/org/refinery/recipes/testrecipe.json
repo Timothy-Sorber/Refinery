@@ -1,0 +1,12 @@
+{
+  "inputs": [
+    {"itemid":  "TestItem", "amount":  1}
+  ],
+
+  "outputs": [
+    {"itemid": "TestItem", "amount": 1, "chance":  100}
+  ],
+  "handcraftable": true,
+  "madein": [],
+  "crafttime": 0.5
+}

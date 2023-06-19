@@ -1,7 +1,5 @@
 package org.refinery.Util.GameObject;
 
-import org.refinery.Util.Item.Inventory.Inventory;
-import org.refinery.Util.Item.Item;
 import org.refinery.Util.Position;
 import org.refinery.Util.Size;
 

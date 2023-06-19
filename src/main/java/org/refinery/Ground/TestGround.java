@@ -7,18 +7,19 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class TestGround extends Ground {
+    private BufferedImage image;
     public TestGround(Position position){
         super(position);
-    }
-    @Override
-    public BufferedImage getSprite() {
-        BufferedImage image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
+        image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
 
         g.setColor(new Color(210,180,140));
         g.fillRect(0,0,50,50);
         g.setColor(Color.BLACK);
         g.drawRect(0,0,50,50);
+    }
+    @Override
+    public BufferedImage getSprite() {
         return image;
     }
 }

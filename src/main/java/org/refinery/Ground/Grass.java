@@ -10,13 +10,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class Grass extends Ground {
-    public Grass(Position position) {
-        super(position);
-    }
-
-    @Override
-    public BufferedImage getSprite() {
-        BufferedImage image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
+    private BufferedImage image;
+    public Grass() {
+        super(new Position(0, 0));
+        image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
 
         g.setColor(Color.green);
@@ -24,6 +21,10 @@ public class Grass extends Ground {
 
         g.setColor(Color.BLACK);
         g.drawRect(0,0,50,50);
+    }
+
+    @Override
+    public BufferedImage getSprite() {
         return image;
     }
 }

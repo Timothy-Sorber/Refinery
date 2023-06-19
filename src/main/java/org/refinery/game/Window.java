@@ -26,7 +26,7 @@ public class Window extends JFrame {
     public Window(int width, int height, Input input, Input pinput){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setTitle("Refinery V-0.0.1");
+        setTitle("Refinery V-0.0.4");
         setExtendedState(MAXIMIZED_BOTH);
         setFocusable(false);
         realitivex = 0;
