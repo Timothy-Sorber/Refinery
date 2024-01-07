@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 public abstract class gameObject {
-    protected Texture texture;
-    protected Vector2 position, velocity, size;
+    public Texture texture;
+    public Vector2 position, velocity, size;
     public gameObject(Texture sprite, Vector2 position, Vector2 size) {
         this.texture = sprite;
         this.position = position;
