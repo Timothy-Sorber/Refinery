@@ -7,36 +7,15 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class gameObject {
     public Texture texture;
-    public Vector2 position, velocity, size;
+    public Vector2 position, velocity, size, bound1, bound2;
+    public boolean collidable = false;
     public gameObject(Texture sprite, Vector2 position, Vector2 size) {
         this.texture = sprite;
         this.position = position;
         this.size = size;
         this.velocity = new Vector2(0, 0);
-    }
-
-    public Texture getTexture() {
-        return texture;
-    }
-
-    public void setTexture(Texture sprite) {
-        this.texture = sprite;
-    }
-
-    public Vector2 getPosition() {
-        return position;
-    }
-
-    public void setPosition(Vector2 position) {
-        this.position = position;
-    }
-
-    public Vector2 getVelocity() {
-        return velocity;
-    }
-
-    public void setVelocity(Vector2 velocity) {
-        this.velocity = velocity;
+        bound1 = new Vector2(0, 0);
+        bound2 = new Vector2(1, 1);
     }
 
     public void draw(SpriteBatch batch) {
